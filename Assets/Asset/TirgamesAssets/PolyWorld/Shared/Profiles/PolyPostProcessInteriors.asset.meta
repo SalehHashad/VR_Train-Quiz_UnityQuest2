@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: de783abd6e98359458753cfa953c3294
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 299594
+  packageName: LowPoly School
+  packageVersion: 1.0
+  assetPath: Assets/TirgamesAssets/PolyWorld/Shared/Profiles/PolyPostProcessInteriors.asset
+  uploadId: 700968
