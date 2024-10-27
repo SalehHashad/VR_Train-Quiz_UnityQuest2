@@ -3,7 +3,47 @@ guid: 82fabbfef3b465148a73167ba9970519
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_027177027
+    second: {fileID: 2100000, guid: 28e97234a2d853540b5a7e383fd62968, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_088088225
+    second: {fileID: 2100000, guid: 769e3b7f60f67234daf0fbb49ae8aed2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_138008110
+    second: {fileID: 2100000, guid: cb14cd241d89ff54a817939828ef65d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_148177027
+    second: {fileID: 2100000, guid: 0dd68ff1410f49c4f91d02911eef4056, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_174186203
+    second: {fileID: 2100000, guid: 7d1b21fb46f23fe45854efd841312b14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_177027088
+    second: {fileID: 2100000, guid: 93c5e24c5b9e4fa418cc6e7bede5e585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_214228153
+    second: {fileID: 2100000, guid: 5b3bcb5832e5b0245b3317bbb82a61fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_228153184
+    second: {fileID: 2100000, guid: 985fb8edcc86995418c3c2b2ba2dd916, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
