@@ -36821,7 +36821,6 @@ MonoBehaviour:
   - {fileID: 2130504389}
   trainAgent: {fileID: 2128450568}
   trainSound: {fileID: 8300000, guid: 1ae4f15577489cf479ed88b98b0ce198, type: 3}
-  isFirstArrival: 1
 --- !u!54 &2128450563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36928,14 +36927,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128450560}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1, y: 0.7415423, z: 13.5}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 18.5, y: 0.7415423, z: 5.000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7716751320247473961}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!195 &2128450568
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -38830,7 +38829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173923403831901395, guid: d8f15b82b5fdaed4189f3b02c0c4cb07, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17
+      value: 9.25
       objectReference: {fileID: 0}
     - target: {fileID: 1173923403831901395, guid: d8f15b82b5fdaed4189f3b02c0c4cb07, type: 3}
       propertyPath: m_LocalRotation.w

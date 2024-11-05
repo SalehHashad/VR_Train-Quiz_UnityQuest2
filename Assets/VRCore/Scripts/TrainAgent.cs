@@ -8,7 +8,7 @@ public class TrainAgent : MonoBehaviour
     [SerializeField] NavMeshAgent trainAgent;
     [SerializeField] AudioClip trainSound;
 
-    public bool isFirstArrival = false;
+    private bool isFirstArrival = false;
     private int currentDestinationIndex = 0;
     private AudioSource currentAudioSource;
 
@@ -33,14 +33,21 @@ public class TrainAgent : MonoBehaviour
         currentAudioSource.PlayOneShot(trainSound);
         if (currentDestinationIndex == 0 && !isFirstArrival)
         {
-            trainAgent.isStopped = true;
+            float trainSpeed = trainAgent.speed;
+            trainAgent.speed = 0;
             yield return new WaitUntil(() => isFirstArrival);
-            trainAgent.isStopped = false;
+            trainAgent.speed = trainSpeed;
             isFirstArrival = false;
         }
 
         currentDestinationIndex = (currentDestinationIndex + 1) % desPoints.Length;
         SetNextDestination();
         isFirstArrival = false;
+    }
+
+    [ContextMenu("Move The Train")]
+    public void MoveTheTrain()
+    {
+        isFirstArrival = true;
     }
 }
