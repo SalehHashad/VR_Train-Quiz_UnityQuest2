@@ -21,12 +21,15 @@ public class SystemChar : MonoBehaviour
 
     public List<LevelCharacter> englishCharactersData;
     public List<LevelCharacter> arabicCharactersData;
+    public List<LevelCharacter> numbersCharacterData;
+
     public int index = 0;
 
     [SerializeField] int countWrongAnswer = 0;
 
     private readonly string englishChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private readonly string arabicChars = "ابتثجحخدذرزسشصضطظعغفقكلمنهوي";
+    private readonly string numberChars = "0123456789";
 
     private void Awake()
     {
@@ -106,6 +109,35 @@ public class SystemChar : MonoBehaviour
                 };
 
                 arabicCharactersData.Add(newCharacter);
+                CheckAssetsAdded(newCharacter);
+            }
+            else
+            {
+                Debug.Log($"{c} already exists in the list.");
+            }
+        }
+    }
+
+    [ContextMenu("Add Number Char to character data")]
+    public void AddNumberCharacterData()
+    {
+        foreach (char c in numberChars)
+        {
+            if (!numbersCharacterData.Exists(character => character.Character == c))
+            {
+                AudioClip clip = Resources.Load<AudioClip>($"Audio/{c}");
+                Sprite sprite = Resources.Load<Sprite>($"Sprites/{c}");
+                GameObject fbx = Resources.Load<GameObject>($"Models/{c}");
+
+                LevelCharacter newCharacter = new LevelCharacter
+                {
+                    Character = c,
+                    CharacterSound = clip,
+                    charImage = sprite,
+                    charFBX = fbx
+                };
+
+                numbersCharacterData.Add(newCharacter);
                 CheckAssetsAdded(newCharacter);
             }
             else
