@@ -8,22 +8,31 @@ public class LevelCharacter
 {
     public char Character;
     public AudioClip CharacterSound;
+    public Sprite charImage;
+    public GameObject charFBX;
 }
 
 public class SystemChar : MonoBehaviour
 {
     public static SystemChar instance;
 
+    public AudioClip correctAnswer;
+    public AudioClip wrongAnswer;
+
     public List<LevelCharacter> englishCharactersData;
     public List<LevelCharacter> arabicCharactersData;
     public int index = 0;
 
+    [SerializeField] int countWrongAnswer = 0;
+
     private readonly string englishChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private readonly string arabicChars = "ابتثجحخدذرزسشصضطظعغفقكلمنهوي";
+
     private void Awake()
     {
         instance = this;
     }
+
     public char GetEnglishChar()
     {
         if (index >= 0 && index < englishChars.Length)
@@ -56,13 +65,19 @@ public class SystemChar : MonoBehaviour
             if (!englishCharactersData.Exists(character => character.Character == c))
             {
                 AudioClip clip = Resources.Load<AudioClip>($"Audio/{c}");
+                Sprite sprite = Resources.Load<Sprite>($"Sprites/{c}");
+                GameObject fbx = Resources.Load<GameObject>($"Models/{c}");
+
                 LevelCharacter newCharacter = new LevelCharacter
                 {
                     Character = c,
-                    CharacterSound = clip
+                    CharacterSound = clip,
+                    charImage = sprite,
+                    charFBX = fbx
                 };
+
                 englishCharactersData.Add(newCharacter);
-                CheckAudioClipAdded(newCharacter);
+                CheckAssetsAdded(newCharacter);
             }
             else
             {
@@ -79,13 +94,19 @@ public class SystemChar : MonoBehaviour
             if (!arabicCharactersData.Exists(character => character.Character == c))
             {
                 AudioClip clip = Resources.Load<AudioClip>($"Audio/{c}");
+                Sprite sprite = Resources.Load<Sprite>($"Sprites/{c}");
+                GameObject fbx = Resources.Load<GameObject>($"Models/{c}");
+
                 LevelCharacter newCharacter = new LevelCharacter
                 {
                     Character = c,
-                    CharacterSound = clip
+                    CharacterSound = clip,
+                    charImage = sprite,
+                    charFBX = fbx
                 };
+
                 arabicCharactersData.Add(newCharacter);
-                CheckAudioClipAdded(newCharacter);
+                CheckAssetsAdded(newCharacter);
             }
             else
             {
@@ -94,15 +115,21 @@ public class SystemChar : MonoBehaviour
         }
     }
 
-    private void CheckAudioClipAdded(LevelCharacter character)
+    private void CheckAssetsAdded(LevelCharacter character)
     {
         if (character.CharacterSound != null)
-        {
             Debug.Log($"{character.Character} has an audio clip: {character.CharacterSound.name}");
-        }
         else
-        {
             Debug.LogWarning($"{character.Character} is missing an audio clip.");
-        }
+
+        if (character.charImage != null)
+            Debug.Log($"{character.Character} has a sprite: {character.charImage.name}");
+        else
+            Debug.LogWarning($"{character.Character} is missing a sprite.");
+
+        if (character.charFBX != null)
+            Debug.Log($"{character.Character} has an FBX model: {character.charFBX.name}");
+        else
+            Debug.LogWarning($"{character.Character} is missing an FBX model.");
     }
 }
