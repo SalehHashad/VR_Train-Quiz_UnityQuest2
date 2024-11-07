@@ -27559,117 +27559,310 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9950259cc3b47ce43a5c19afa1d43d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctAnswer: {fileID: 0}
+  wrongAnswer: {fileID: 0}
   englishCharactersData:
   - Character: 65
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 5303f6aecf6a9d54a92369ae2981529a, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 66
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 5a14cc2394e11b24e9dc40864de06f5f, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 67
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 6a4a0c74641eba74aa553e69c67f01bf, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 68
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: c039f13569d0573478ac6e4136acadc0, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 69
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 1dd45c7922f5696449291921d9891edc, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 70
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: fbc172f25b3239843bf2e07379e3519f, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 71
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 2545a14622a9bac4e8b2ae9611f0266f, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 72
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 80881b3f160d3644f8a6c34abe395439, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 73
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: d1f5936e9cae70f4e9342f56daf1c365, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 74
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: f88717ea7a894eb48a2aa0e2b378c0d4, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 75
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: ee36591ed64a96647b0b353c0f3e4e26, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 76
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 0ec2b923bfc31904b8b9c30330bc6064, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 77
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: a914013a91634f14a86448c86dc15c1f, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 78
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: a77a66afab19512409a2aeb990af26d1, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 79
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 5983249e1cc768743b17873f417acdbc, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 80
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 88c41e185c7b2a84a8741f63149afeef, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 81
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 827de63462dd2a04181a1414cb9b9484, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 82
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 2dd786daada82cd4db2a79fed5af472a, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 83
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: b9ee36938f8d1a04b9780f036b970e80, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 84
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 68e922bc75e9dce4da84472439fed45a, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 85
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 660f9548b2c6ba84492f4418607d6fe2, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 86
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: a9a2eee864a7bcb458eab1d83ed559db, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 87
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 7421ac3d17ed5e04992c40f5a080a5d7, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 88
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 7d236b58176f5e44090c0ca96b61b234, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 89
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 58a095679d7e1b04ba1b385981f0403c, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 90
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 6520c5e31021558478b5cf57e1bc286d, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   arabicCharactersData:
   - Character: 1575
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: a6fc9185875da25498d172fad4428e05, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1576
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: f231e213d72ab4a49911b7b980e18821, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1578
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 5c905cf1ab816ad4d8a0b41cfd9db8a0, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1579
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 023f7cc1152bc2346a8435699e76c722, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1580
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: cfa199874afb8f24daeebaafe8d94f64, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1581
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: df266848091d86e49845e089d197c5b9, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1582
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: b8b0ce7ab0b3e314eab4f2f22d0d6a18, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1583
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 715061c3acad1e14fa752f2f9a87c304, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1584
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: a658c86529324964690522224324b811, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1585
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 3595184be7531cb45ba49f4ceb2e4fbd, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1586
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 34b81b63bc20edd469637bf2aed4ccab, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1587
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 71a9e80720db0104ebec08b4f0945e22, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1588
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 8dd9f781ba9b6944598511517aafc8e4, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1589
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: f04bc301034ca2447993d1bedee291a0, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1590
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 01c8493e610bea140a0117daed9d40ad, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1591
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 7bcd12adb9cf42946b3018edaac91a6a, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1592
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: d99a2e0d842315048aa0da150c8c5b24, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1593
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: fe4d89ecc17234d45b276bef5f9f9823, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1594
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 8b7f20832214f474fa4a246990f9e112, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1601
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 28b8fdd413fd152438b03fb74733d2f6, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1602
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 3bcfa8b67e2ddec4988e445b1dd24856, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1603
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 30cf8f1665079cb4db55da90573c6338, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1604
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: c1dd617310673c24eba9340b925b043b, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1605
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 2c28c5b7ef51cb84c9aadf3ba2e3bba1, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1606
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 75e9e303387775f41a3f7d79494461d4, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1607
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 62cfbf9505bbe9c4986aa550d3c4b3dc, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1608
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 23ed2c89ff94a6b4a9e9b41cd1cdb4d6, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   - Character: 1610
-    CharacterSound: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 04c9628dadffac640b1299a7691a9328, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  englishNumberCharacterData:
+  - Character: 48
+    CharacterSound: {fileID: 8300000, guid: d21836bf4f2461749ae2dc8853aaaa31, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 49
+    CharacterSound: {fileID: 8300000, guid: 77e1aab352199264988b8543dc7c39ca, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 50
+    CharacterSound: {fileID: 8300000, guid: 2851e993e39c31f4c8498d08dd008b9a, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 51
+    CharacterSound: {fileID: 8300000, guid: 7b7cf379f4ed4ce4796c490a6d6ca0da, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 52
+    CharacterSound: {fileID: 8300000, guid: e2679afe738454745b6d8da518f7438e, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 53
+    CharacterSound: {fileID: 8300000, guid: bdacb8f3b583f5c44ae272b986b6ecbf, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 54
+    CharacterSound: {fileID: 8300000, guid: 821ec31495487d54d8e1729bb10d1177, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 55
+    CharacterSound: {fileID: 8300000, guid: 0e2582247b53d9c42b73f2cdd59cc3c4, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 56
+    CharacterSound: {fileID: 8300000, guid: 562d10b514866ed4eac3ea759689f99a, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 57
+    CharacterSound: {fileID: 8300000, guid: 255614199ba5ddb4aafa36628792371d, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  arabicNumberCharacterData:
+  - Character: 1632
+    CharacterSound: {fileID: 8300000, guid: a5f1b801f296e384d8c6c6ad077ffb62, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1633
+    CharacterSound: {fileID: 8300000, guid: d53ed65b866861a4faa90a2344efe267, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1634
+    CharacterSound: {fileID: 8300000, guid: c5d8765a79384bd418c0013937d0ff40, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1635
+    CharacterSound: {fileID: 8300000, guid: 2fb00558ba8f4874dbf6ede9f9645d8f, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1636
+    CharacterSound: {fileID: 8300000, guid: d5820336f43fe824c95e480f0aba6041, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1637
+    CharacterSound: {fileID: 8300000, guid: 1f77a870629ae29478b5f0f8aaab1148, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1638
+    CharacterSound: {fileID: 8300000, guid: 02a8b336f195d194f96b9940110702ce, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1639
+    CharacterSound: {fileID: 8300000, guid: ffb7e2e0cdee7554cac935b01cfc77fb, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1640
+    CharacterSound: {fileID: 8300000, guid: 8084c577354a5ce4a895663f1b1fa953, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
+  - Character: 1641
+    CharacterSound: {fileID: 8300000, guid: dc4159d75afeb0846a700caef6120e6e, type: 3}
+    charImage: {fileID: 0}
+    charFBX: {fileID: 0}
   index: 0
+  countWrongAnswer: 2
 --- !u!4 &1631243356
 Transform:
   m_ObjectHideFlags: 0

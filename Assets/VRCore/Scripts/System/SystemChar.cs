@@ -21,7 +21,8 @@ public class SystemChar : MonoBehaviour
 
     public List<LevelCharacter> englishCharactersData;
     public List<LevelCharacter> arabicCharactersData;
-    public List<LevelCharacter> numbersCharacterData;
+    public List<LevelCharacter> englishNumberCharacterData;
+    public List<LevelCharacter> arabicNumberCharacterData;
 
     public int index = 0;
 
@@ -29,7 +30,8 @@ public class SystemChar : MonoBehaviour
 
     private readonly string englishChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private readonly string arabicChars = "ابتثجحخدذرزسشصضطظعغفقكلمنهوي";
-    private readonly string numberChars = "0123456789";
+    private readonly string englishNumberChars = "0123456789";
+    private readonly string arabicNumberChars = "٠١٢٣٤٥٦٧٨٩";
 
     private void Awake()
     {
@@ -58,6 +60,30 @@ public class SystemChar : MonoBehaviour
             return selectedChar;
         }
         throw new IndexOutOfRangeException("Index is out of range for Arabic characters.");
+    }
+
+    public char GetEnglishNumberChar()
+    {
+        if (index >= 0 && index < englishNumberChars.Length)
+        {
+            char selectedChar = englishNumberChars[index];
+            print(selectedChar + " Is Selected");
+            index++;
+            return selectedChar;
+        }
+        throw new IndexOutOfRangeException("Index is out of range for English number characters.");
+    }
+
+    public char GetArabicNumberChar()
+    {
+        if (index >= 0 && index < arabicNumberChars.Length)
+        {
+            char selectedChar = arabicNumberChars[index];
+            print(selectedChar + " Is Selected");
+            index++;
+            return selectedChar;
+        }
+        throw new IndexOutOfRangeException("Index is out of range for Arabic number characters.");
     }
 
     [ContextMenu("Add English Char to character data")]
@@ -118,12 +144,12 @@ public class SystemChar : MonoBehaviour
         }
     }
 
-    [ContextMenu("Add Number Char to character data")]
-    public void AddNumberCharacterData()
+    [ContextMenu("Add English Number Char to character data")]
+    public void AddEnglishNumberCharacterData()
     {
-        foreach (char c in numberChars)
+        foreach (char c in englishNumberChars)
         {
-            if (!numbersCharacterData.Exists(character => character.Character == c))
+            if (!englishNumberCharacterData.Exists(character => character.Character == c))
             {
                 AudioClip clip = Resources.Load<AudioClip>($"Audio/{c}");
                 Sprite sprite = Resources.Load<Sprite>($"Sprites/{c}");
@@ -137,7 +163,36 @@ public class SystemChar : MonoBehaviour
                     charFBX = fbx
                 };
 
-                numbersCharacterData.Add(newCharacter);
+                englishNumberCharacterData.Add(newCharacter);
+                CheckAssetsAdded(newCharacter);
+            }
+            else
+            {
+                Debug.Log($"{c} already exists in the list.");
+            }
+        }
+    }
+
+    [ContextMenu("Add Arabic Number Char to character data")]
+    public void AddArabicNumberCharacterData()
+    {
+        foreach (char c in arabicNumberChars)
+        {
+            if (!arabicNumberCharacterData.Exists(character => character.Character == c))
+            {
+                AudioClip clip = Resources.Load<AudioClip>($"Audio/{c}");
+                Sprite sprite = Resources.Load<Sprite>($"Sprites/{c}");
+                GameObject fbx = Resources.Load<GameObject>($"Models/{c}");
+
+                LevelCharacter newCharacter = new LevelCharacter
+                {
+                    Character = c,
+                    CharacterSound = clip,
+                    charImage = sprite,
+                    charFBX = fbx
+                };
+
+                arabicNumberCharacterData.Add(newCharacter);
                 CheckAssetsAdded(newCharacter);
             }
             else
