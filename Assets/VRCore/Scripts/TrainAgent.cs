@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class TrainAgent : MonoBehaviour
 {
+    public static TrainAgent Instance;
     [SerializeField] Transform[] desPoints;
     [SerializeField] NavMeshAgent trainAgent;
     [SerializeField] AudioClip trainSound;
@@ -11,6 +12,11 @@ public class TrainAgent : MonoBehaviour
     private bool isFirstArrival = false;
     private int currentDestinationIndex = 0;
     private AudioSource currentAudioSource;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
