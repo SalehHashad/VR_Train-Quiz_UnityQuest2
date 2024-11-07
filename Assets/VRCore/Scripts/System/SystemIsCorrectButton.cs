@@ -9,9 +9,11 @@ public class SystemIsCorrectButton : MonoBehaviour
 {
     public bool isCorrect = false;
     public char answerChar;
+    public Sprite answerImage;
     private void OnEnable()
     {
         this.GetComponentInChildren<TextMeshProUGUI>().text = answerChar.ToString();
+        this.GetComponentInChildren<Image>().sprite = answerImage;
         this.GetComponent<Button>().onClick.AddListener(OnClicked);
     }
 
