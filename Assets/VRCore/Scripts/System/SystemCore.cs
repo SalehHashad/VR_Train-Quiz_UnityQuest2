@@ -7,15 +7,18 @@ public class SystemCore : MonoBehaviour
 {
     [SerializeField] GameObject btnPrefab;
     [ContextMenu("UpdateDisplay")]
-    public void UpdateDisplay()
+    public void UpdateDisplays()
     {
-        char c = SystemChar.instance.GetEnglishChar();
-        FindObjectOfType<SystemCharDisplay>().GetComponent<TextMeshProUGUI>().text
-            = c.ToString();
-        print(c);
-        for (int i = 0; i < SystemChar.instance.index; i++)
-        {   
-            SystemQustionPanel.instance.AddButton(btnPrefab, c, true);
-        }
+        LevelCharacter currentCharacterData = SystemChar.instance.UpdateNextQuestion();
+        foreach(Transform t in SystemCharDisplay.instance.transform) { Destroy(t.gameObject); }
+        GameObject g = Instantiate(currentCharacterData.charFBX, SystemCharDisplay.instance.transform.position, Quaternion.identity);
+        g.transform.parent = SystemCharDisplay.instance.transform;
+        g.transform.localScale = Vector3.one;
     }
+
+
+    //SystemCharDisplay.instance
+    //SystemQustionPanel.instance.AddButton(btnPrefab, c, true);
+
+
 }

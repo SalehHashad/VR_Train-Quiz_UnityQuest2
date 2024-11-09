@@ -11,14 +11,18 @@ public class LevelCharacter
     public Sprite charImage;
     public GameObject charFBX;
 }
+public enum GameCategories { englishCharacter, arabicCharacter, englishNumber, arabicNumber }
 
 public class SystemChar : MonoBehaviour
 {
     public static SystemChar instance;
+    public GameCategories gameCategory = GameCategories.englishCharacter;
+
 
     public AudioClip correctAnswer;
     public AudioClip wrongAnswer;
 
+    public static List<LevelCharacter> currentCharactersData = new List<LevelCharacter>();
     public List<LevelCharacter> englishCharactersData;
     public List<LevelCharacter> arabicCharactersData;
     public List<LevelCharacter> englishNumberCharacterData;
@@ -36,56 +40,47 @@ public class SystemChar : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        UpdateCurrentCharData(gameCategory);
     }
-
-    public char GetEnglishChar()
+    
+    public void UpdateCurrentCharData(GameCategories _gameCategory)
     {
-        if (index >= 0 && index < englishChars.Length)
-        {
-            char selectedChar = englishChars[index];
-            print(selectedChar + " Is Selected");
-            index++;
-            return selectedChar;
-        }
-        throw new IndexOutOfRangeException("Index is out of range for English characters.");
-    }
+        if(currentCharactersData.Count > 0)
+            currentCharactersData.Clear();
 
-    public char GetArabicChar()
+        gameCategory = _gameCategory;
+        
+        switch (_gameCategory)
+        {
+            case GameCategories.englishCharacter:
+                currentCharactersData = englishCharactersData;
+                break;
+            case GameCategories.englishNumber:
+                currentCharactersData = englishNumberCharacterData;
+                break;
+            case GameCategories.arabicCharacter:
+                currentCharactersData = arabicCharactersData;
+                break;
+            case GameCategories.arabicNumber:
+                currentCharactersData = arabicNumberCharacterData;
+                break;
+
+        }
+    }
+    public LevelCharacter UpdateNextQuestion()
     {
-        if (index >= 0 && index < arabicChars.Length)
+        if (index >= currentCharactersData.Count)
         {
-            char selectedChar = arabicChars[index];
-            print(selectedChar + " Is Selected");
-            index++;
-            return selectedChar;
+            throw new IndexOutOfRangeException("Index is out of range for currentCharactersData.");
         }
-        throw new IndexOutOfRangeException("Index is out of range for Arabic characters.");
+
+        LevelCharacter m_levelCharacter = currentCharactersData[index];
+        index++;
+        return m_levelCharacter;
     }
 
-    public char GetEnglishNumberChar()
-    {
-        if (index >= 0 && index < englishNumberChars.Length)
-        {
-            char selectedChar = englishNumberChars[index];
-            print(selectedChar + " Is Selected");
-            index++;
-            return selectedChar;
-        }
-        throw new IndexOutOfRangeException("Index is out of range for English number characters.");
-    }
 
-    public char GetArabicNumberChar()
-    {
-        if (index >= 0 && index < arabicNumberChars.Length)
-        {
-            char selectedChar = arabicNumberChars[index];
-            print(selectedChar + " Is Selected");
-            index++;
-            return selectedChar;
-        }
-        throw new IndexOutOfRangeException("Index is out of range for Arabic number characters.");
-    }
-
+    #region ContextMenu
     [ContextMenu("Add English Char to character data")]
     public void AddEnglishCharacterData()
     {
@@ -219,4 +214,5 @@ public class SystemChar : MonoBehaviour
         else
             Debug.LogWarning($"{character.Character} is missing an FBX model.");
     }
-}
+    #endregion
+ }

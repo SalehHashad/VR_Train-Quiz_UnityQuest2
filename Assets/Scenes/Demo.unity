@@ -3372,14 +3372,14 @@ RectTransform:
   m_GameObject: {fileID: 167946313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1784119584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.622}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167946315
@@ -3389,7 +3389,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167946313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -27559,6 +27559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9950259cc3b47ce43a5c19afa1d43d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameCategory: 0
   correctAnswer: {fileID: 0}
   wrongAnswer: {fileID: 8300000, guid: 7ab64fd37e6f315438cc3bcf8d4f69e9, type: 3}
   englishCharactersData:
