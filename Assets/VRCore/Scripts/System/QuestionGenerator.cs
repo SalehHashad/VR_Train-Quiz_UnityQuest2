@@ -1,68 +1,102 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class QuestionGenerator
 {
-    private const int NUM_OPTIONS = 3;
 
     public struct QuestionOption
     {
-        public char Character;
-        public Sprite Sprite;
-        public bool IsCorrect;
+        public char Character { get; }
+        public Sprite Sprite { get; }
+        public bool IsCorrect { get; }
+
+        public QuestionOption(char character, Sprite sprite, bool isCorrect)
+        {
+            Character = character;
+            Sprite = sprite;
+            IsCorrect = isCorrect;
+        }
     }
 
-    public static QuestionOption[] GenerateOptions(LevelCharacter correctCharacter, List<LevelCharacter> otherOptions)
+    public static QuestionOption[] GenerateOptions(
+        LevelCharacter correctCharacter,
+        List<LevelCharacter> availableCharacters,
+        bool isNewLetterPhase,
+        int questionNumber,
+        Sprite blankSprite)
     {
-        var options = new List<QuestionOption>
+        var options = new QuestionOption[3];
+
+        if (isNewLetterPhase)
         {
-            new QuestionOption
+            for (int i = 0; i < 3; i++)
             {
-                Character = correctCharacter.Character,
-                Sprite = correctCharacter.CharImage,
-                IsCorrect = true
+                if (i == questionNumber)
+                {
+                    options[i] = new QuestionOption(
+                        correctCharacter.Character,
+                        correctCharacter.CharImage,
+                        true
+                    );
+                }
+                else
+                {
+                    options[i] = new QuestionOption(
+                        ' ',
+                        blankSprite,
+                        false
+                    );
+                }
             }
-        };
-
-        var wrongOptions = otherOptions.Where(x => x.Character != correctCharacter.Character).ToList();
-        var selectedWrong = SelectRandomElements(wrongOptions, NUM_OPTIONS - 1);
-
-        options.AddRange(selectedWrong.Select(x => new QuestionOption
+        }
+        else
         {
-            Character = x.Character,
-            Sprite = x.CharImage,
-            IsCorrect = false
-        }));
+            List<LevelCharacter> incorrectOptions = new List<LevelCharacter>(availableCharacters);
+            incorrectOptions.Remove(correctCharacter);
 
-        return ShuffleOptions(options.ToArray());
-    }
+            for (int i = incorrectOptions.Count - 1; i > 0; i--)
+            {
+                int randomIndex = Random.Range(0, i + 1);
+                (incorrectOptions[i], incorrectOptions[randomIndex]) = (incorrectOptions[randomIndex], incorrectOptions[i]);
+            }
 
-    private static List<LevelCharacter> SelectRandomElements(List<LevelCharacter> list, int count)
-    {
-        var result = new List<LevelCharacter>();
-        var tempList = new List<LevelCharacter>(list);
+            int correctPosition = Random.Range(0, 3);
 
-        while (result.Count < count && tempList.Count > 0)
-        {
-            int index = Random.Range(0, tempList.Count);
-            result.Add(tempList[index]);
-            tempList.RemoveAt(index);
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == correctPosition)
+                {
+                    options[i] = new QuestionOption(
+                        correctCharacter.Character,
+                        correctCharacter.CharImage,
+                        true
+                    );
+                }
+                else
+                {
+                    int incorrectIndex = i > correctPosition ? i - 1 : i;
+                    if (incorrectIndex < incorrectOptions.Count)
+                    {
+                        var incorrectChar = incorrectOptions[incorrectIndex];
+                        options[i] = new QuestionOption(
+                            incorrectChar.Character,
+                            incorrectChar.CharImage,
+                            false
+                        );
+                    }
+                    else
+                    {
+                        var incorrectChar = incorrectOptions[incorrectIndex % incorrectOptions.Count];
+                        options[i] = new QuestionOption(
+                            incorrectChar.Character,
+                            incorrectChar.CharImage,
+                            false
+                        );
+                    }
+                }
+            }
         }
 
-        return result;
-    }
-
-    private static QuestionOption[] ShuffleOptions(QuestionOption[] options)
-    {
-        for (int i = options.Length - 1; i > 0; i--)
-        {
-            int randomIndex = Random.Range(0, i + 1);
-            var temp = options[randomIndex];
-            options[randomIndex] = options[i];
-            options[i] = temp;
-        }
         return options;
     }
 }

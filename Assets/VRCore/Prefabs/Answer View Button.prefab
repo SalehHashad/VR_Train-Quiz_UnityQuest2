@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2648672579038958356}
   - component: {fileID: 7992774953354463808}
   - component: {fileID: 4623361243053195201}
-  - component: {fileID: 6271531313202282480}
+  - component: {fileID: -8505809575194085796}
   m_Layer: 0
   m_Name: Answer View Button
   m_TagString: Untagged
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6271531313202282480
+--- !u!114 &-8505809575194085796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,13 +189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2915007422218705607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c61d8af056f114bbbd6187b97b41eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 899e896af1ea1824c9712e95ee4336a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 0
-  answerChar: 49
-  answerImage: {fileID: 0}
-  childImage: {fileID: 0}
+  characterImage: {fileID: 2134851527919403214}
+  characterText: {fileID: 8003890105216937435}
 --- !u!1 &5971706386558238396
 GameObject:
   m_ObjectHideFlags: 0

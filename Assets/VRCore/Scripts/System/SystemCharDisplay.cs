@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SystemCharDisplay : MonoBehaviour
 {
+    public List<CharactersDataClass> characters = new List<CharactersDataClass>();
+
     public static SystemCharDisplay instance;
     private void Awake()
     {
