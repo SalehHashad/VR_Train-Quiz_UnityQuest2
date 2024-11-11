@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.iOS.Xcode;
 using UnityEngine;
 using static QuestionGenerator;
 
@@ -9,10 +10,15 @@ public class LearningManager : MonoBehaviour
     [SerializeField] private Transform questionPanel;
     [SerializeField] private Sprite blankSprite;
 
-    private const int NEW_LETTER_QUESTIONS = 3;    
-    private const int REVIEW_QUESTIONS = 3;        
-    private const int MAX_PAST_CHARACTERS = 5;     
-
+    private const int NEW_LETTER_QUESTIONS = 3;
+    //private const int REVIEW_QUESTIONS = 5;
+    private const int INITIAL_REVIEW_QUESTIONS = 3;    
+    private const int MEDIUM_REVIEW_QUESTIONS = 4;     
+    private const int MAX_REVIEW_QUESTIONS = 5;
+    private const int MAX_PAST_CHARACTERS = 5;
+    private const int DEFAULT_OPTIONS = 3;
+    private const int MEDIUM_OPTIONS = 4;
+    private const int MAX_OPTIONS = 5;
     private ICharacterDataProvider characterDataProvider;
     private List<LevelCharacter> pastCharacters = new List<LevelCharacter>();
     private LevelCharacter currentCharacter;
@@ -21,14 +27,17 @@ public class LearningManager : MonoBehaviour
     public int reviewIndex = 0;
     public int myReviewInde = 0;
     public int CharacterIndex = 0;
+    private int maxReachedIndex = 0;
     private void Start()
     {
         //if (!ValidateReferences()) return;
         characterDataProvider = CharacterDataManager.Instance;
-        
+
         SetupNewCharacter();
         GenerateQuestion();
     }
+
+
 
     private bool ValidateReferences()
     {
@@ -52,6 +61,7 @@ public class LearningManager : MonoBehaviour
 
     private void SetupNewCharacter()
     {
+       // TrainAgent.Instance.MoveTheTrain();
         if (currentCharacter != null)
         {
             AddToPastCharacters(currentCharacter);
@@ -62,6 +72,7 @@ public class LearningManager : MonoBehaviour
         isNewLetterPhase = true;
         currentQuestionNumber = 0;
         reviewIndex = 0;
+        myReviewInde = 0;
     }
 
     private void AddToPastCharacters(LevelCharacter character)
@@ -92,21 +103,52 @@ public class LearningManager : MonoBehaviour
             GenerateReviewQuestion();
         }
     }
+    private int GetCurrentReviewQuestionCount()
+    {
+        int currentIndex = CharacterDataManager.Instance.currentIndex;
 
+        if (currentIndex > maxReachedIndex)
+        {
+            maxReachedIndex = currentIndex;
+        }
+
+        if (maxReachedIndex >= 5)
+        {
+            return MAX_REVIEW_QUESTIONS;
+        }
+        else if (maxReachedIndex >= 4)
+        {
+            return MEDIUM_REVIEW_QUESTIONS;
+        }
+        return INITIAL_REVIEW_QUESTIONS;
+    }
+
+    private int GetCurrentOptionCount()
+    {
+        if (maxReachedIndex >= 5)
+        {
+            return MAX_OPTIONS;
+        }
+        else if (maxReachedIndex >= 3)
+        {
+            return MEDIUM_OPTIONS;
+        }
+        return DEFAULT_OPTIONS;
+    }
     private void GenerateNewLetterQuestion()
     {
         PlayCharacterSound(currentCharacter);
-
         var options = QuestionGenerator.GenerateOptions(
             currentCharacter,
             new List<LevelCharacter>(),
             true,
             currentQuestionNumber,
-            blankSprite
+            blankSprite,
+            3
         );
-
         CreateAnswerButtons(options);
     }
+
 
     private void GenerateReviewQuestion()
     {
@@ -130,16 +172,16 @@ public class LearningManager : MonoBehaviour
             availableCharacters.Add(currentCharacter);
         }
 
-        int optionCount = (CharacterDataManager.Instance.currentIndex == 3) ? 4 : 3;
-        var options = new QuestionOption[optionCount];
-
-        options = QuestionGenerator.GenerateOptions(
+        int optionCount = GetCurrentOptionCount();
+        var options = QuestionGenerator.GenerateOptions(
             reviewCharacter,
             availableCharacters,
             false,
             0,
-            blankSprite
+            blankSprite,
+            optionCount
         );
+
         CreateAnswerButtons(options);
     }
 
@@ -185,12 +227,17 @@ public class LearningManager : MonoBehaviour
         {
             myReviewInde++;
             reviewIndex++;
-            if (/*reviewIndex >= pastCharacters.Count ||*/ myReviewInde >= REVIEW_QUESTIONS)
+            int currentReviewQuestions = GetCurrentReviewQuestionCount();
+
+            if (myReviewInde >= currentReviewQuestions)
             {
                 myReviewInde = 0;
                 SetupNewCharacter();
             }
-            
+            else if (reviewIndex >= pastCharacters.Count)
+            {
+                reviewIndex = 0;
+            }
         }
         GenerateQuestion();
     }
@@ -203,7 +250,7 @@ public class LearningManager : MonoBehaviour
         }
     }
 
-    private void PlayCharacterSound(LevelCharacter character)
+    public void PlayCharacterSound(LevelCharacter character)
     {
         if (character.CharacterSound != null)
         {

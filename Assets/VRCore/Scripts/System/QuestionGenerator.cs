@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class QuestionGenerator
 {
-
     public struct QuestionOption
     {
         public char Character { get; }
@@ -23,15 +22,17 @@ public class QuestionGenerator
         List<LevelCharacter> availableCharacters,
         bool isNewLetterPhase,
         int questionNumber,
-        Sprite blankSprite)
+        Sprite blankSprite,
+        int optionCount)
     {
-        var options = new QuestionOption[3];
+        var options = new QuestionOption[optionCount];
 
         if (isNewLetterPhase)
         {
-            for (int i = 0; i < 3; i++)
+            // For new letter phase, distribute the correct answer among more blank options
+            for (int i = 0; i < optionCount; i++)
             {
-                if (i == questionNumber)
+                if (i == questionNumber % optionCount) // Use modulo to ensure valid position
                 {
                     options[i] = new QuestionOption(
                         correctCharacter.Character,
@@ -54,15 +55,16 @@ public class QuestionGenerator
             List<LevelCharacter> incorrectOptions = new List<LevelCharacter>(availableCharacters);
             incorrectOptions.Remove(correctCharacter);
 
+            // Shuffle the incorrect options
             for (int i = incorrectOptions.Count - 1; i > 0; i--)
             {
                 int randomIndex = Random.Range(0, i + 1);
                 (incorrectOptions[i], incorrectOptions[randomIndex]) = (incorrectOptions[randomIndex], incorrectOptions[i]);
             }
 
-            int correctPosition = Random.Range(0, 3);
+            int correctPosition = Random.Range(0, optionCount);
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < optionCount; i++)
             {
                 if (i == correctPosition)
                 {
@@ -74,25 +76,14 @@ public class QuestionGenerator
                 }
                 else
                 {
-                    int incorrectIndex = i > correctPosition ? i - 1 : i;
-                    if (incorrectIndex < incorrectOptions.Count)
-                    {
-                        var incorrectChar = incorrectOptions[incorrectIndex];
-                        options[i] = new QuestionOption(
-                            incorrectChar.Character,
-                            incorrectChar.CharImage,
-                            false
-                        );
-                    }
-                    else
-                    {
-                        var incorrectChar = incorrectOptions[incorrectIndex % incorrectOptions.Count];
-                        options[i] = new QuestionOption(
-                            incorrectChar.Character,
-                            incorrectChar.CharImage,
-                            false
-                        );
-                    }
+                    // Handle cases where we need more incorrect options than available
+                    int incorrectIndex = (i > correctPosition ? i - 1 : i) % incorrectOptions.Count;
+                    var incorrectChar = incorrectOptions[incorrectIndex];
+                    options[i] = new QuestionOption(
+                        incorrectChar.Character,
+                        incorrectChar.CharImage,
+                        false
+                    );
                 }
             }
         }

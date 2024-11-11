@@ -9,18 +9,18 @@ public class TrainAgent : MonoBehaviour
     [SerializeField] NavMeshAgent trainAgent;
     [SerializeField] AudioClip trainSound;
 
+    LearningManager learningManager;
     private bool isFirstArrival = false;
     private int currentDestinationIndex = 0;
-    private AudioSource currentAudioSource;
 
     private void Awake()
     {
+        learningManager = FindObjectOfType<LearningManager>();
         Instance = this;
     }
 
     private void Start()
     {
-        currentAudioSource = GetComponent<AudioSource>();
         SetNextDestination();
     }
 
@@ -36,7 +36,6 @@ public class TrainAgent : MonoBehaviour
         {
             yield return null;
         }
-        currentAudioSource.PlayOneShot(trainSound);
         if (currentDestinationIndex == 0 && !isFirstArrival)
         {
             float trainSpeed = trainAgent.speed;
