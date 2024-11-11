@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public enum GameCategory { EnglishCharacter, ArabicCharacter, EnglishNumber, ArabicNumber }
+public enum GameCategory {none, EnglishCharacter, ArabicCharacter, EnglishNumber, ArabicNumber }
 
 public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
 {
@@ -12,7 +13,7 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
 
     [SerializeField] private AudioClip correctAnswerSound;
     [SerializeField] private AudioClip wrongAnswerSound;
-    [SerializeField] private GameCategory currentCategory = GameCategory.EnglishCharacter;
+    public GameCategory currentCategory = GameCategory.EnglishCharacter;
 
     [SerializeField] private List<LevelCharacter> englishCharactersData = new List<LevelCharacter>();
     [SerializeField] private List<LevelCharacter> arabicCharactersData = new List<LevelCharacter>();
@@ -47,7 +48,6 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
     {
         Debug.Log("Loading all character resources...");
 
-        // Clear existing data
         englishCharactersData.Clear();
         arabicCharactersData.Clear();
         englishNumberData.Clear();
@@ -68,7 +68,6 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
             AddCharacterToList(c, englishNumberData);
         }
 
-        // Load Arabic numbers
         foreach (char c in arabicNumbers)
         {
             AddCharacterToList(c, arabicNumberData);
@@ -180,10 +179,11 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
     private void AddCharacterToList(char character, List<LevelCharacter> list)
     {
         var clip = Resources.Load<AudioClip>($"Audio/{character}");
+        var clipIntro = Resources.Load<AudioClip>($"Audio/{character}_1 ");
         var sprite = Resources.Load<Sprite>($"Sprites/{character}");
         var fbx = Resources.Load<GameObject>($"Models/{character}");
 
-        var newChar = new LevelCharacter(character, clip, sprite, fbx);
+        var newChar = new LevelCharacter(character, clip, clipIntro, sprite, fbx);
         list.Add(newChar);
 
         Debug.Log($"Added character '{character}' to list");
@@ -202,6 +202,8 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
 
     private void ValidateCharacterResources(LevelCharacter character)
     {
+        if (character.LetterIntro == null)
+            Debug.Log($"Missing audio for character '{character.Character}'");
         if (character.CharacterSound == null)
             Debug.LogWarning($"Missing audio for character '{character.Character}'");
         if (character.CharImage == null)

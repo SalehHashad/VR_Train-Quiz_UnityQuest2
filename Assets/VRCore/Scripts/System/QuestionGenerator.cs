@@ -29,10 +29,9 @@ public class QuestionGenerator
 
         if (isNewLetterPhase)
         {
-            // For new letter phase, distribute the correct answer among more blank options
             for (int i = 0; i < optionCount; i++)
             {
-                if (i == questionNumber % optionCount) // Use modulo to ensure valid position
+                if (i == questionNumber % optionCount) 
                 {
                     options[i] = new QuestionOption(
                         correctCharacter.Character,
@@ -55,7 +54,6 @@ public class QuestionGenerator
             List<LevelCharacter> incorrectOptions = new List<LevelCharacter>(availableCharacters);
             incorrectOptions.Remove(correctCharacter);
 
-            // Shuffle the incorrect options
             for (int i = incorrectOptions.Count - 1; i > 0; i--)
             {
                 int randomIndex = Random.Range(0, i + 1);
@@ -76,7 +74,6 @@ public class QuestionGenerator
                 }
                 else
                 {
-                    // Handle cases where we need more incorrect options than available
                     int incorrectIndex = (i > correctPosition ? i - 1 : i) % incorrectOptions.Count;
                     var incorrectChar = incorrectOptions[incorrectIndex];
                     options[i] = new QuestionOption(

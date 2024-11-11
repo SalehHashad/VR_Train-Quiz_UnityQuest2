@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.iOS.Xcode;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using static QuestionGenerator;
 
 public class LearningManager : MonoBehaviour
@@ -9,9 +10,14 @@ public class LearningManager : MonoBehaviour
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private Transform questionPanel;
     [SerializeField] private Sprite blankSprite;
-
+    private bool canPlayCharacterSound = false;
+    private bool isNewLetterPhase = true;
+    public Transform characterSpawnPoint;
+    private GameObject currentCharacterInstance;
+    private Animator animator;
+    private Coroutine audioLoopCoroutine;
+    //const Param
     private const int NEW_LETTER_QUESTIONS = 3;
-    //private const int REVIEW_QUESTIONS = 5;
     private const int INITIAL_REVIEW_QUESTIONS = 3;    
     private const int MEDIUM_REVIEW_QUESTIONS = 4;     
     private const int MAX_REVIEW_QUESTIONS = 5;
@@ -19,26 +25,76 @@ public class LearningManager : MonoBehaviour
     private const int DEFAULT_OPTIONS = 3;
     private const int MEDIUM_OPTIONS = 4;
     private const int MAX_OPTIONS = 5;
+    //Other Scripts
     private ICharacterDataProvider characterDataProvider;
     private List<LevelCharacter> pastCharacters = new List<LevelCharacter>();
     private LevelCharacter currentCharacter;
-    private bool isNewLetterPhase = true;
+    //Integers 
     private int currentQuestionNumber = 0;
-    public int reviewIndex = 0;
-    public int myReviewInde = 0;
-    public int CharacterIndex = 0;
+    private int reviewIndex = 0;
+    private int myReviewInde = 0;
+    private int CharacterIndex = 0;
     private int maxReachedIndex = 0;
+    private int WrongAnswerCount = 0;
+    
     private void Start()
     {
-        //if (!ValidateReferences()) return;
-        characterDataProvider = CharacterDataManager.Instance;
+        if (CharacterDataManager.Instance.currentCategory == GameCategory.none)
+        {
+            Debug.LogWarning("No category selected. Please select a category from the main menu.");
+            return;
+        }
 
+        characterDataProvider = CharacterDataManager.Instance;
+        if (questionPanel != null)
+        {
+            questionPanel.gameObject.SetActive(false);
+        }
+        TrainAgent.Instance.OnTrainStopped += HandleTrainStopped;
         SetupNewCharacter();
-        GenerateQuestion();
     }
 
+    private void OnDestroy()
+    {
+        if (TrainAgent.Instance != null)
+        {
+            TrainAgent.Instance.OnTrainStopped -= HandleTrainStopped;
+        }
+    }
 
+    private void HandleTrainStopped()
+    {
+        if (audioLoopCoroutine != null)
+        {
+            StopCoroutine(audioLoopCoroutine);
+            audioLoopCoroutine = null;
+        }
 
+        if (questionPanel != null)
+        {
+            questionPanel.gameObject.SetActive(true);
+        }
+    }
+    private IEnumerator LoopAudio(AudioClip clip)
+    {
+        while (true)
+        {
+            AudioManager.Instance.PlaySound(clip);
+            yield return new WaitForSeconds(clip.length);
+        }
+    }
+
+    private void OnTrainStopped()
+    {
+        print("Train is Stopped in Learning Manager");
+        canPlayCharacterSound = true;
+    }
+
+    private void OnTrainStarted()
+    {
+        print("Train moves");
+        canPlayCharacterSound = false;
+    }
     private bool ValidateReferences()
     {
         if (buttonPrefab == null)
@@ -61,18 +117,81 @@ public class LearningManager : MonoBehaviour
 
     private void SetupNewCharacter()
     {
-       // TrainAgent.Instance.MoveTheTrain();
         if (currentCharacter != null)
         {
             AddToPastCharacters(currentCharacter);
         }
+        if (currentCharacterInstance != null)
+        {
+            Destroy(currentCharacterInstance);
+        }
 
         char nextChar = characterDataProvider.GetNextCharacter();
         currentCharacter = characterDataProvider.GetCharacterData(nextChar);
+
+        if (currentCharacter != null && currentCharacter.CharFBX != null)
+        {
+            Debug.Log(currentCharacter.CharFBX.name);
+            SpwanModel(currentCharacter.CharFBX);
+        }
+
+        StartCoroutine(StartNewCharacterSequence());
+
+    }
+
+    private IEnumerator StartNewCharacterSequence()
+    {
+        if (currentCharacter != null && currentCharacter.LetterIntro != null)
+        {
+            audioLoopCoroutine = StartCoroutine(LoopAudio(currentCharacter.LetterIntro));
+        }
+
+        TrainAgent.Instance.MoveTheTrain();
+
+        while (TrainAgent.Instance.isFirstArrival)
+        {
+            yield return null;
+        }
+
+        if (audioLoopCoroutine != null)
+        {
+            StopCoroutine(audioLoopCoroutine);
+        }
+
+        if (questionPanel != null)
+        {
+            questionPanel.gameObject.SetActive(true);
+        }
+
         isNewLetterPhase = true;
         currentQuestionNumber = 0;
         reviewIndex = 0;
         myReviewInde = 0;
+
+        GenerateQuestion();
+    }
+
+    private void SpwanModel(GameObject charModel)
+    {
+        if (charModel != null && characterSpawnPoint != null)
+        {
+            currentCharacterInstance = Instantiate(charModel, characterSpawnPoint.position, characterSpawnPoint.rotation, characterSpawnPoint);
+            Animator animator = currentCharacterInstance.GetComponent<Animator>();
+            if (animator == null)
+            {
+                animator = currentCharacterInstance.AddComponent<Animator>();
+            }
+            var animatorController = Resources.Load<RuntimeAnimatorController>("CharacterAnimation/CharactersAnim");
+
+            if (animator != null)
+            {
+                animator.runtimeAnimatorController = animatorController;
+            }
+            else
+            {
+                Debug.LogWarning("No Animator Controller provided for the character.");
+            }
+        }
     }
 
     private void AddToPastCharacters(LevelCharacter character)
@@ -137,7 +256,6 @@ public class LearningManager : MonoBehaviour
     }
     private void GenerateNewLetterQuestion()
     {
-        PlayCharacterSound(currentCharacter);
         var options = QuestionGenerator.GenerateOptions(
             currentCharacter,
             new List<LevelCharacter>(),
@@ -147,8 +265,9 @@ public class LearningManager : MonoBehaviour
             3
         );
         CreateAnswerButtons(options);
-    }
 
+        PlayCharacterSound(currentCharacter);
+    }
 
     private void GenerateReviewQuestion()
     {
@@ -189,15 +308,33 @@ public class LearningManager : MonoBehaviour
     {
         if (isCorrect)
         {
+            WrongAnswerCount = 0;
             CharacterDataManager.Instance.PlayCorrectSound();
             StartCoroutine(HandleCorrectAnswerWithDelay());
         }
         else
         {
             CharacterDataManager.Instance.PlayWrongSound();
+            WrongAnswerCount++;
+            if (WrongAnswerCount > 3)
+            {
+                HighlightCorrectAnswer();
+            }
             if (isNewLetterPhase)
             {
                 StartCoroutine(RegenerateQuestionAfterDelay());
+            }
+        }
+    }
+
+    private void HighlightCorrectAnswer()
+    {
+        foreach (Transform child in questionPanel)
+        {
+            var button = child.GetComponent<AnswerButton>();
+            if (button != null && button.isCorrect)
+            {
+                button.Highlight(); 
             }
         }
     }

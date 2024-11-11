@@ -1,6 +1,6 @@
-using System.Collections;
-using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine;
+using System.Collections;
 
 public class TrainAgent : MonoBehaviour
 {
@@ -9,8 +9,10 @@ public class TrainAgent : MonoBehaviour
     [SerializeField] NavMeshAgent trainAgent;
     [SerializeField] AudioClip trainSound;
 
+    public event System.Action OnTrainStopped;  
+
     LearningManager learningManager;
-    private bool isFirstArrival = false;
+    public bool isFirstArrival = false;
     private int currentDestinationIndex = 0;
 
     private void Awake()
@@ -36,6 +38,9 @@ public class TrainAgent : MonoBehaviour
         {
             yield return null;
         }
+
+        OnTrainStopped?.Invoke();
+
         if (currentDestinationIndex == 0 && !isFirstArrival)
         {
             float trainSpeed = trainAgent.speed;

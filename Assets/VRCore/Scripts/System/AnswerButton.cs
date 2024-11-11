@@ -9,8 +9,11 @@ public class AnswerButton : MonoBehaviour
     [SerializeField] private Image characterImage;
     [SerializeField] private TextMeshProUGUI characterText;
     private Button button;
+    Color color = Color.white;
     private System.Action<bool> onAnswerSelected;
-    private bool isCorrect;
+
+    public bool isCorrect { get; private set; }
+
 
     private void Awake()
     {
@@ -26,6 +29,11 @@ public class AnswerButton : MonoBehaviour
         button.onClick.AddListener(OnButtonClicked);
     }
 
+    public void Highlight()
+    {
+        //color.a = 150f;
+        characterImage.color = Color.magenta;
+    }
     private void OnButtonClicked()
     {
         onAnswerSelected?.Invoke(isCorrect);

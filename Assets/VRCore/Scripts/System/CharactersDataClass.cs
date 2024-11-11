@@ -7,6 +7,7 @@ public class CharactersDataClass
 {
     public char Character;
     public AudioClip CharacterSound;
+    public AudioClip LetterIntro;
     public Sprite CharImage;
     public GameObject CharFBX;
 
