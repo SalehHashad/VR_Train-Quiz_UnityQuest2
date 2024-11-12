@@ -179,7 +179,7 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
     private void AddCharacterToList(char character, List<LevelCharacter> list)
     {
         var clip = Resources.Load<AudioClip>($"Audio/{character}");
-        var clipIntro = Resources.Load<AudioClip>($"Audio/{character}_1 ");
+        var clipIntro = Resources.Load<AudioClip>($"Audio/Exploring the Letter {character}");
         var sprite = Resources.Load<Sprite>($"Sprites/{character}");
         var fbx = Resources.Load<GameObject>($"Models/{character}");
 
