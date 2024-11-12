@@ -6,7 +6,7 @@ public class TrainAgent : MonoBehaviour
 {
     public static TrainAgent Instance;
     [SerializeField] Transform[] desPoints;
-    [SerializeField] NavMeshAgent trainAgent;
+    public NavMeshAgent trainAgent;
     [SerializeField] AudioClip trainSound;
 
     public event System.Action OnTrainStopped;  

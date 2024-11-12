@@ -6,6 +6,7 @@ using TMPro;
 
 public class AnswerButton : MonoBehaviour
 {
+
     [SerializeField] private Image characterImage;
     [SerializeField] private TextMeshProUGUI characterText;
     private Button button;

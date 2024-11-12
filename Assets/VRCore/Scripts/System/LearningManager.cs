@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,15 +7,20 @@ using static QuestionGenerator;
 
 public class LearningManager : MonoBehaviour
 {
-    [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private Transform questionPanel;
+    [SerializeField] private Transform questionPanel_1;
+    [SerializeField] private Transform questionPanel_2;
+    private Transform[] questionPanels;
+    private int currentQuestionPanelIndex = 0;
+
+    [SerializeField] private GameObject buttonPrefab;
+    
     [SerializeField] private Sprite blankSprite;
     private bool canPlayCharacterSound = false;
     private bool isNewLetterPhase = true;
     public Transform characterSpawnPoint;
     private GameObject currentCharacterInstance;
     private Animator animator;
-    private Coroutine audioLoopCoroutine;
     //const Param
     private const int NEW_LETTER_QUESTIONS = 3;
     private const int INITIAL_REVIEW_QUESTIONS = 3;    
@@ -36,7 +41,23 @@ public class LearningManager : MonoBehaviour
     private int CharacterIndex = 0;
     private int maxReachedIndex = 0;
     private int WrongAnswerCount = 0;
-    
+
+
+    // Coroutines
+    private Coroutine characterSoundCoroutine;
+    private Coroutine letterIntroCoroutine;
+    private Coroutine audioLoopCoroutine;
+
+    private void Awake()
+    {
+        questionPanels = new Transform[]
+    {
+        questionPanel,
+        questionPanel_1,
+        questionPanel_2
+    };
+    }
+
     private void Start()
     {
         if (CharacterDataManager.Instance.currentCategory == GameCategory.none)
@@ -62,6 +83,56 @@ public class LearningManager : MonoBehaviour
         }
     }
 
+    private IEnumerator PlayCharacterSoundLoop()
+    {
+        while (true)
+        {
+            AudioManager.Instance.PlaySound(currentCharacter.CharacterSound);
+            yield return new WaitForSeconds(currentCharacter.CharacterSound.length);
+        }
+    }
+
+    private IEnumerator PlayLetterIntroLoop()
+    {
+        while (!TrainAgent.Instance.isFirstArrival || TrainAgent.Instance.trainAgent.velocity.magnitude > 0.1f)
+        {
+            AudioManager.Instance.PlaySound(currentCharacter.LetterIntro);
+            yield return new WaitForSeconds(currentCharacter.LetterIntro.length);
+        }
+    }
+
+    private void StartCharacterSoundLoop()
+    {
+        if (characterSoundCoroutine != null)
+        {
+            StopCoroutine(characterSoundCoroutine);
+        }
+        characterSoundCoroutine = StartCoroutine(PlayCharacterSoundLoop());
+    }
+
+    private void StartLetterIntroLoop()
+    {
+        if (letterIntroCoroutine != null)
+        {
+            StopCoroutine(letterIntroCoroutine);
+        }
+        letterIntroCoroutine = StartCoroutine(PlayLetterIntroLoop());
+    }
+
+    private void StopAllAudioLoops()
+    {
+        if (characterSoundCoroutine != null)
+        {
+            StopCoroutine(characterSoundCoroutine);
+            characterSoundCoroutine = null;
+        }
+        if (letterIntroCoroutine != null)
+        {
+            StopCoroutine(letterIntroCoroutine);
+            letterIntroCoroutine = null;
+        }
+    }
+
     private void HandleTrainStopped()
     {
         if (audioLoopCoroutine != null)
@@ -75,14 +146,14 @@ public class LearningManager : MonoBehaviour
             questionPanel.gameObject.SetActive(true);
         }
     }
-    private IEnumerator LoopAudio(AudioClip clip)
-    {
-        while (true)
-        {
-            AudioManager.Instance.PlaySound(clip);
-            yield return new WaitForSeconds(clip.length);
-        }
-    }
+    //private IEnumerator LoopAudio(AudioClip clip)
+    //{
+    //    while (true)
+    //    {
+    //        AudioManager.Instance.PlaySound(clip);
+    //        yield return new WaitForSeconds(clip.length);
+    //    }
+    //}
 
     private void OnTrainStopped()
     {
@@ -138,12 +209,26 @@ public class LearningManager : MonoBehaviour
         StartCoroutine(StartNewCharacterSequence());
 
     }
+    private IEnumerator LoopAudio(AudioClip clip)
+    {
+        
+        //AudioManager.Instance.PlaySound(currentCharacter.CharacterSound);
+        //yield return new WaitForSeconds(currentCharacter.CharacterSound.length);
 
+        while (!TrainAgent.Instance.isFirstArrival || TrainAgent.Instance.trainAgent.velocity.magnitude > 0.1f)
+        {
+            AudioManager.Instance.PlaySound(currentCharacter.LetterIntro);
+            yield return new WaitForSeconds(clip.length);
+        }
+    }
     private IEnumerator StartNewCharacterSequence()
     {
-        if (currentCharacter != null && currentCharacter.LetterIntro != null)
+        StopAllAudioLoops(); 
+
+        if (currentCharacter != null)
         {
-            audioLoopCoroutine = StartCoroutine(LoopAudio(currentCharacter.LetterIntro));
+            StartCharacterSoundLoop();
+            StartLetterIntroLoop();
         }
 
         TrainAgent.Instance.MoveTheTrain();
@@ -153,10 +238,7 @@ public class LearningManager : MonoBehaviour
             yield return null;
         }
 
-        if (audioLoopCoroutine != null)
-        {
-            StopCoroutine(audioLoopCoroutine);
-        }
+        StopAllAudioLoops(); 
 
         if (questionPanel != null)
         {
@@ -221,6 +303,7 @@ public class LearningManager : MonoBehaviour
         {
             GenerateReviewQuestion();
         }
+
     }
     private int GetCurrentReviewQuestionCount()
     {
@@ -246,13 +329,19 @@ public class LearningManager : MonoBehaviour
     {
         if (maxReachedIndex >= 5)
         {
+            currentQuestionPanelIndex = 2;
             return MAX_OPTIONS;
         }
         else if (maxReachedIndex >= 3)
         {
+            currentQuestionPanelIndex = 1;
             return MEDIUM_OPTIONS;
         }
-        return DEFAULT_OPTIONS;
+        else
+        {
+            currentQuestionPanelIndex = 0;
+            return DEFAULT_OPTIONS;
+        }
     }
     private void GenerateNewLetterQuestion()
     {
@@ -266,11 +355,12 @@ public class LearningManager : MonoBehaviour
         );
         CreateAnswerButtons(options);
 
-        PlayCharacterSound(currentCharacter);
+        //PlayCharacterSound(currentCharacter);
     }
 
     private void GenerateReviewQuestion()
     {
+        ClearQuestionPanel();
         if (pastCharacters.Count == 0)
         {
             SetupNewCharacter();
@@ -381,7 +471,7 @@ public class LearningManager : MonoBehaviour
 
     private void ClearQuestionPanel()
     {
-        foreach (Transform child in questionPanel)
+        foreach (Transform child in questionPanels[currentQuestionPanelIndex])
         {
             Destroy(child.gameObject);
         }
@@ -397,15 +487,23 @@ public class LearningManager : MonoBehaviour
 
     private void CreateAnswerButtons(QuestionOption[] options)
     {
-        if (options == null || options.Length == 0)
+        int optionCount = options.Length;
+        int panelIndex = 0;
+
+        if (optionCount == 4)
         {
-            Debug.LogError("No options provided for creating answer buttons!");
-            return;
+            panelIndex = 1;
         }
+        else if (optionCount == 5)
+        {
+            panelIndex = 2;
+        }
+
+        Transform targetPanel = questionPanels[panelIndex];
 
         foreach (var option in options)
         {
-            var buttonObject = Instantiate(buttonPrefab, questionPanel);
+            var buttonObject = Instantiate(buttonPrefab, targetPanel);
             var button = buttonObject.GetComponent<AnswerButton>();
 
             if (button == null)

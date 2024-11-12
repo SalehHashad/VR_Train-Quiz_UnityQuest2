@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class QuestionGenerator
 {
+    
     public struct QuestionOption
     {
         public char Character { get; }
