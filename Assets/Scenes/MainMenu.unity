@@ -717,7 +717,7 @@ MonoBehaviour:
   arabicCharactersData:
   - Character: 1575
     CharacterSound: {fileID: 8300000, guid: 36810454c330c5c46b5a011b6fd1418f, type: 3}
-    LetterIntro: {fileID: 0}
+    LetterIntro: {fileID: 8300000, guid: f67187365e98d314391b0e37e2286f84, type: 3}
     CharImage: {fileID: 21300000, guid: fdfe4504888410e4bafea0b125fb803b, type: 3}
     CharFBX: {fileID: 919132149155446097, guid: 7783a906a61b24b41ac628fe0d9393b2, type: 3}
   - Character: 1576

@@ -19,7 +19,9 @@ public class LearningManager : MonoBehaviour
     private bool canPlayCharacterSound = false;
     private bool isNewLetterPhase = true;
     public Transform characterSpawnPoint;
-    private GameObject currentCharacterInstance;
+    public Transform CentercharacterSpawnPoint;
+    private GameObject forwardCurrentCharacterInstance;
+    private GameObject centerCurrentCharacterInstance;
     private Animator animator;
     //const Param
     private const int NEW_LETTER_QUESTIONS = 3;
@@ -71,100 +73,7 @@ public class LearningManager : MonoBehaviour
         {
             questionPanel.gameObject.SetActive(false);
         }
-        TrainAgent.Instance.OnTrainStopped += HandleTrainStopped;
         SetupNewCharacter();
-    }
-
-    private void OnDestroy()
-    {
-        if (TrainAgent.Instance != null)
-        {
-            TrainAgent.Instance.OnTrainStopped -= HandleTrainStopped;
-        }
-    }
-
-    private IEnumerator PlayCharacterSoundLoop()
-    {
-        while (true)
-        {
-            AudioManager.Instance.PlaySound(currentCharacter.CharacterSound);
-            yield return new WaitForSeconds(currentCharacter.CharacterSound.length);
-        }
-    }
-
-    private IEnumerator PlayLetterIntroLoop()
-    {
-        while (!TrainAgent.Instance.isFirstArrival || TrainAgent.Instance.trainAgent.velocity.magnitude > 0.1f)
-        {
-            AudioManager.Instance.PlaySound(currentCharacter.LetterIntro);
-            yield return new WaitForSeconds(currentCharacter.LetterIntro.length);
-        }
-    }
-
-    private void StartCharacterSoundLoop()
-    {
-        if (characterSoundCoroutine != null)
-        {
-            StopCoroutine(characterSoundCoroutine);
-        }
-        characterSoundCoroutine = StartCoroutine(PlayCharacterSoundLoop());
-    }
-
-    private void StartLetterIntroLoop()
-    {
-        if (letterIntroCoroutine != null)
-        {
-            StopCoroutine(letterIntroCoroutine);
-        }
-        letterIntroCoroutine = StartCoroutine(PlayLetterIntroLoop());
-    }
-
-    private void StopAllAudioLoops()
-    {
-        if (characterSoundCoroutine != null)
-        {
-            StopCoroutine(characterSoundCoroutine);
-            characterSoundCoroutine = null;
-        }
-        if (letterIntroCoroutine != null)
-        {
-            StopCoroutine(letterIntroCoroutine);
-            letterIntroCoroutine = null;
-        }
-    }
-
-    private void HandleTrainStopped()
-    {
-        if (audioLoopCoroutine != null)
-        {
-            StopCoroutine(audioLoopCoroutine);
-            audioLoopCoroutine = null;
-        }
-
-        if (questionPanel != null)
-        {
-            questionPanel.gameObject.SetActive(true);
-        }
-    }
-    //private IEnumerator LoopAudio(AudioClip clip)
-    //{
-    //    while (true)
-    //    {
-    //        AudioManager.Instance.PlaySound(clip);
-    //        yield return new WaitForSeconds(clip.length);
-    //    }
-    //}
-
-    private void OnTrainStopped()
-    {
-        print("Train is Stopped in Learning Manager");
-        canPlayCharacterSound = true;
-    }
-
-    private void OnTrainStarted()
-    {
-        print("Train moves");
-        canPlayCharacterSound = false;
     }
     private bool ValidateReferences()
     {
@@ -192,9 +101,9 @@ public class LearningManager : MonoBehaviour
         {
             AddToPastCharacters(currentCharacter);
         }
-        if (currentCharacterInstance != null)
+        if (centerCurrentCharacterInstance != null)
         {
-            Destroy(currentCharacterInstance);
+            Destroy(centerCurrentCharacterInstance);
         }
 
         char nextChar = characterDataProvider.GetNextCharacter();
@@ -202,49 +111,29 @@ public class LearningManager : MonoBehaviour
 
         if (currentCharacter != null && currentCharacter.CharFBX != null)
         {
-            Debug.Log(currentCharacter.CharFBX.name);
+            Debug.Log("Not Instantiateeeeeeeeeeee" + currentCharacter.CharFBX.name);
             SpwanModel(currentCharacter.CharFBX);
         }
 
         StartCoroutine(StartNewCharacterSequence());
 
     }
-    private IEnumerator LoopAudio(AudioClip clip)
-    {
-        
-        //AudioManager.Instance.PlaySound(currentCharacter.CharacterSound);
-        //yield return new WaitForSeconds(currentCharacter.CharacterSound.length);
 
-        while (!TrainAgent.Instance.isFirstArrival || TrainAgent.Instance.trainAgent.velocity.magnitude > 0.1f)
-        {
-            AudioManager.Instance.PlaySound(currentCharacter.LetterIntro);
-            yield return new WaitForSeconds(clip.length);
-        }
-    }
     private IEnumerator StartNewCharacterSequence()
     {
-        StopAllAudioLoops(); 
-
-        if (currentCharacter != null)
-        {
-            StartCharacterSoundLoop();
-            StartLetterIntroLoop();
-        }
-
         TrainAgent.Instance.MoveTheTrain();
-
-        while (TrainAgent.Instance.isFirstArrival)
+        // Train moving So we need to play Loop Audio
+        while (!TrainAgent.Instance.isTrainStopped)
         {
-            yield return null;
+            AudioManager.Instance.PlayLetterIntro(currentCharacter.LetterIntro);
+            Debug.Log("Train is moving");
+            yield return new WaitForSeconds(currentCharacter.LetterIntro.length);
         }
-
-        StopAllAudioLoops(); 
 
         if (questionPanel != null)
         {
             questionPanel.gameObject.SetActive(true);
         }
-
         isNewLetterPhase = true;
         currentQuestionNumber = 0;
         reviewIndex = 0;
@@ -257,11 +146,13 @@ public class LearningManager : MonoBehaviour
     {
         if (charModel != null && characterSpawnPoint != null)
         {
-            currentCharacterInstance = Instantiate(charModel, characterSpawnPoint.position, characterSpawnPoint.rotation, characterSpawnPoint);
-            Animator animator = currentCharacterInstance.GetComponent<Animator>();
+            forwardCurrentCharacterInstance = Instantiate(charModel, characterSpawnPoint.position, characterSpawnPoint.rotation, characterSpawnPoint);
+            centerCurrentCharacterInstance = Instantiate(charModel, CentercharacterSpawnPoint.position, CentercharacterSpawnPoint.rotation, CentercharacterSpawnPoint);
+
+            Animator animator = forwardCurrentCharacterInstance.GetComponent<Animator>();
             if (animator == null)
             {
-                animator = currentCharacterInstance.AddComponent<Animator>();
+                animator = forwardCurrentCharacterInstance.AddComponent<Animator>();
             }
             var animatorController = Resources.Load<RuntimeAnimatorController>("CharacterAnimation/CharactersAnim");
 
@@ -288,7 +179,7 @@ public class LearningManager : MonoBehaviour
     private void GenerateQuestion()
     {
         ClearQuestionPanel();
-
+        PlayCharacterSound(currentCharacter);
         if (!isNewLetterPhase && pastCharacters.Count == 0)
         {
             SetupNewCharacter();

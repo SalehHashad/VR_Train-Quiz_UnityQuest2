@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -27,12 +28,28 @@ public class AudioManager : MonoBehaviour
         if (delay > 0)
             StartCoroutine(PlaySoundDelayed(clip, delay));
         else
-            audioSource.PlayOneShot(clip);
+        {
+            audioSource.clip = clip;
+            audioSource.loop = false;
+            audioSource.Play();
+        }
+            //audioSource.PlayOneShot(clip);
     }
 
     private IEnumerator PlaySoundDelayed(AudioClip clip, float delay)
     {
         yield return new WaitForSeconds(delay);
         audioSource.PlayOneShot(clip);
+    }
+
+    public void PlayLetterIntro(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.loop=true;
+        audioSource.Play();
+    }
+    public void StopingAudio()
+    {
+        audioSource.Stop();
     }
 }

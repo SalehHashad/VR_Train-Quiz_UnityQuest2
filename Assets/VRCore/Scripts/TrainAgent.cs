@@ -8,17 +8,19 @@ public class TrainAgent : MonoBehaviour
     [SerializeField] Transform[] desPoints;
     public NavMeshAgent trainAgent;
     [SerializeField] AudioClip trainSound;
-
-    public event System.Action OnTrainStopped;  
-
+    public event System.Action OnTrainStopped;
     LearningManager learningManager;
     public bool isFirstArrival = false;
+    public bool isTrainStopped = false;
+    public bool isAtLastPosition = false; 
     private int currentDestinationIndex = 0;
+    private int lastPointIndex; 
 
     private void Awake()
     {
         learningManager = FindObjectOfType<LearningManager>();
         Instance = this;
+        lastPointIndex = desPoints.Length - 1; 
     }
 
     private void Start()
@@ -39,7 +41,7 @@ public class TrainAgent : MonoBehaviour
             yield return null;
         }
 
-        OnTrainStopped?.Invoke();
+        isAtLastPosition = (currentDestinationIndex == lastPointIndex);
 
         if (currentDestinationIndex == 0 && !isFirstArrival)
         {
@@ -48,16 +50,40 @@ public class TrainAgent : MonoBehaviour
             yield return new WaitUntil(() => isFirstArrival);
             trainAgent.speed = trainSpeed;
             isFirstArrival = false;
+            isTrainStopped = true;
         }
 
-        currentDestinationIndex = (currentDestinationIndex + 1) % desPoints.Length;
-        SetNextDestination();
+        if (!isAtLastPosition)
+        {
+            currentDestinationIndex = (currentDestinationIndex + 1) % desPoints.Length;
+            SetNextDestination();
+        }
+        else
+        {
+            isTrainStopped = true;
+            OnTrainStopped?.Invoke();
+            AudioManager.Instance.StopingAudio();
+        }
+
         isFirstArrival = false;
+    }
+
+    private void Update()
+    {
+        
     }
 
     [ContextMenu("Move The Train")]
     public void MoveTheTrain()
     {
         isFirstArrival = true;
+        isTrainStopped = false;
+        isAtLastPosition = false; 
+
+        if (currentDestinationIndex == lastPointIndex)
+        {
+            currentDestinationIndex = 0;
+            SetNextDestination();
+        }
     }
 }
