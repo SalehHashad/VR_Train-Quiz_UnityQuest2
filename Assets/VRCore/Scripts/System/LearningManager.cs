@@ -111,7 +111,6 @@ public class LearningManager : MonoBehaviour
 
         if (currentCharacter != null && currentCharacter.CharFBX != null)
         {
-            Debug.Log("Not Instantiateeeeeeeeeeee" + currentCharacter.CharFBX.name);
             SpwanModel(currentCharacter.CharFBX);
         }
 
@@ -121,12 +120,12 @@ public class LearningManager : MonoBehaviour
 
     private IEnumerator StartNewCharacterSequence()
     {
+       
         TrainAgent.Instance.MoveTheTrain();
         // Train moving So we need to play Loop Audio
         while (!TrainAgent.Instance.isTrainStopped)
         {
             AudioManager.Instance.PlayLetterIntro(currentCharacter.LetterIntro);
-            Debug.Log("Train is moving");
             yield return new WaitForSeconds(currentCharacter.LetterIntro.length);
         }
 
@@ -144,18 +143,34 @@ public class LearningManager : MonoBehaviour
 
     private void SpwanModel(GameObject charModel)
     {
+        // Clear previous character instances
+        if (forwardCurrentCharacterInstance != null)
+        {
+            Destroy(forwardCurrentCharacterInstance);
+            forwardCurrentCharacterInstance = null;
+        }
+        if (centerCurrentCharacterInstance != null)
+        {
+            Destroy(centerCurrentCharacterInstance);
+            centerCurrentCharacterInstance = null;
+        }
+
+        // Spawn new characters if we have valid inputs
         if (charModel != null && characterSpawnPoint != null)
         {
             forwardCurrentCharacterInstance = Instantiate(charModel, characterSpawnPoint.position, characterSpawnPoint.rotation, characterSpawnPoint);
             centerCurrentCharacterInstance = Instantiate(charModel, CentercharacterSpawnPoint.position, CentercharacterSpawnPoint.rotation, CentercharacterSpawnPoint);
+
+            HandleCategoryBasedScale(forwardCurrentCharacterInstance);
+            HandleCategoryBasedScale(centerCurrentCharacterInstance);
 
             Animator animator = forwardCurrentCharacterInstance.GetComponent<Animator>();
             if (animator == null)
             {
                 animator = forwardCurrentCharacterInstance.AddComponent<Animator>();
             }
-            var animatorController = Resources.Load<RuntimeAnimatorController>("CharacterAnimation/CharactersAnim");
 
+            var animatorController = Resources.Load<RuntimeAnimatorController>("CharacterAnimation/CharactersAnim");
             if (animator != null)
             {
                 animator.runtimeAnimatorController = animatorController;
@@ -194,7 +209,7 @@ public class LearningManager : MonoBehaviour
         {
             GenerateReviewQuestion();
         }
-
+        
     }
     private int GetCurrentReviewQuestionCount()
     {
@@ -214,6 +229,29 @@ public class LearningManager : MonoBehaviour
             return MEDIUM_REVIEW_QUESTIONS;
         }
         return INITIAL_REVIEW_QUESTIONS;
+    }
+
+    private void HandleCategoryBasedScale(GameObject characterObject)
+    {
+        Vector3 EnglishScale = new Vector3(3f, 3f, 3f);
+        Vector3 DefaultScale = new Vector3(1f, 1f, 1f);
+
+        if (characterObject != null)
+        {
+            if (CharacterDataManager.Instance.currentCategory == GameCategory.EnglishCharacter)
+            {
+                characterObject.transform.localScale = EnglishScale;
+            }
+
+            else
+            {
+                characterObject.transform.localScale = DefaultScale;
+            }
+        }
+        else
+        {
+            Debug.Log(characterObject.name + "Not Found");
+        }
     }
 
     private int GetCurrentOptionCount()
@@ -245,8 +283,6 @@ public class LearningManager : MonoBehaviour
             3
         );
         CreateAnswerButtons(options);
-
-        //PlayCharacterSound(currentCharacter);
     }
 
     private void GenerateReviewQuestion()
