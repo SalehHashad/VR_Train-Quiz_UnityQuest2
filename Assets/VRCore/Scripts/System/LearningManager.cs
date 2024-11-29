@@ -35,7 +35,7 @@ public class LearningManager : MonoBehaviour
     //Other Scripts
     private ICharacterDataProvider characterDataProvider;
     private List<LevelCharacter> pastCharacters = new List<LevelCharacter>();
-    private LevelCharacter currentCharacter;
+    [SerializeField] private LevelCharacter currentCharacter;
     //Integers 
     private int currentQuestionNumber = 0;
     private int reviewIndex = 0;

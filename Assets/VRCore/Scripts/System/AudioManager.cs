@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource = gameObject.GetComponent<AudioSource>();
         }
         else
             Destroy(gameObject);
