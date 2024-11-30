@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using static QuestionGenerator;
@@ -23,6 +24,8 @@ public class LearningManager : MonoBehaviour
     private GameObject forwardCurrentCharacterInstance;
     private GameObject centerCurrentCharacterInstance;
     private Animator animator;
+
+    private bool isSpwaning = false;
     //const Param
     private const int NEW_LETTER_QUESTIONS = 3;
     private const int INITIAL_REVIEW_QUESTIONS = 3;
@@ -44,12 +47,10 @@ public class LearningManager : MonoBehaviour
     private int maxReachedIndex = 0;
     private int WrongAnswerCount = 0;
 
-
     // Coroutines
     private Coroutine characterSoundCoroutine;
     private Coroutine letterIntroCoroutine;
     private Coroutine audioLoopCoroutine;
-
 
     //Events
     [SerializeField] private VoidEventChannelSO TrainStoppedEventSO;
@@ -125,6 +126,7 @@ public class LearningManager : MonoBehaviour
 
     private void SetupNewCharacter()
     {
+        isSpwaning = true;
         if (currentCharacter != null)
         {
             AddToPastCharacters(currentCharacter);
@@ -143,7 +145,7 @@ public class LearningManager : MonoBehaviour
         }
 
         StartCoroutine(StartNewCharacterSequence());
-
+        
     }
 
     private IEnumerator StartNewCharacterSequence()
@@ -162,8 +164,62 @@ public class LearningManager : MonoBehaviour
         GenerateQuestion();
     }
 
+    private void AddClipToEntryState(Animator animator, AnimationClip clip)
+    {
+        // Get the Animator Controller
+        var animatorController = animator.runtimeAnimatorController as AnimatorController;
+
+        if (animatorController == null)
+        {
+            Debug.LogError("Animator Controller is null or not of the correct type!");
+            return;
+        }
+
+        // Get the first layer (typically the base layer)
+        var layer = animatorController.layers[0];
+
+        // Get the Entry State
+        var stateMachine = layer.stateMachine;
+        var entryState = stateMachine.entryPosition;
+
+        // Create a new state and set its motion to the animation clip
+        var state = stateMachine.AddState("EntryAnimationState");
+        state.motion = clip;
+
+        // Create a transition from Entry to the new state
+        var transition = stateMachine.AddEntryTransition(state);
+
+        Debug.Log("Clip added to Entry State successfully!");
+    }
+
+    private void ClearAnimator(Animator animator)
+    {
+        // Get the Animator Controller
+        var animatorController = animator.runtimeAnimatorController as AnimatorController;
+
+        if (animatorController == null)
+        {
+            Debug.LogError("Animator Controller is null or not of the correct type!");
+            return;
+        }
+
+        // Clear all states from the AnimatorController's state machine
+        foreach (var layer in animatorController.layers)
+        {
+            AnimatorStateMachine stateMachine = layer.stateMachine;
+            stateMachine.states = new ChildAnimatorState[0]; // Clear all states
+        }
+
+        Debug.Log("Cleared all animation clips from the Animator!");
+    }
+
     private void SpwanModel(GameObject charModel)
     {
+        if (isSpwaning == true)
+        {
+            //ClearAnimator(animator);
+        }
+
         if (forwardCurrentCharacterInstance != null)
         {
             Destroy(forwardCurrentCharacterInstance);
@@ -182,14 +238,28 @@ public class LearningManager : MonoBehaviour
 
             HandleCategoryBasedScale(forwardCurrentCharacterInstance);
             HandleCategoryBasedScale(centerCurrentCharacterInstance);
-
             Animator animator = forwardCurrentCharacterInstance.GetComponent<Animator>();
             if (animator == null)
             {
                 animator = forwardCurrentCharacterInstance.AddComponent<Animator>();
             }
 
-            var animatorController = Resources.Load<RuntimeAnimatorController>("CharacterAnimation/CharactersAnim");
+            RuntimeAnimatorController animatorController = Resources.Load<RuntimeAnimatorController>("CharacterAnimation/CharactersAnim_test");
+            AnimationClip animationClip = Resources.Load<AnimationClip>("CharacterAnimation/Alaaf");
+
+            if (animatorController != null && animationClip != null)
+            {
+                animator.runtimeAnimatorController = animatorController;
+
+                // Add the clip to the Entry State
+                AddClipToEntryState(animator, animationClip);
+            }
+            else
+            {
+                Debug.LogWarning("Failed to load Animator Controller or Animation Clip!");
+            }
+
+            Debug.Log("Animator and Animation Clip setup completed!");
             if (animator != null)
             {
                 animator.runtimeAnimatorController = animatorController;
@@ -198,7 +268,11 @@ public class LearningManager : MonoBehaviour
             {
                 Debug.LogWarning("No Animator Controller provided for the character.");
             }
+            
+
         }
+
+
     }
 
     private void AddToPastCharacters(LevelCharacter character)

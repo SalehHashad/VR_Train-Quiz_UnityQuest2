@@ -585,378 +585,378 @@ MonoBehaviour:
   currentCategory: 0
   englishCharactersData:
   - Character: 65
-    CharacterSound: {fileID: 8300000, guid: 3e7b991243d9ab04cb7ceb3e653fb055, type: 3}
-    LetterIntro: {fileID: 8300000, guid: f67187365e98d314391b0e37e2286f84, type: 3}
-    CharImage: {fileID: 21300000, guid: fc228c8f769ee8c4eb54ae107f80490e, type: 3}
-    CharFBX: {fileID: 5310426806925101915, guid: 5420771cb4655a046954d999722f3222, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 7726ecb0f3b06174cb851898c3ea8884, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 3f689f55c7af1c949b856ecf9eb0c8c3, type: 3}
+    CharImage: {fileID: 21300000, guid: 0d2f6bcb55619964db4509ec7b1941ee, type: 3}
+    CharFBX: {fileID: 5310426806925101915, guid: 3bb60df8a7c49cf41a663705a69b27dd, type: 3}
   - Character: 66
-    CharacterSound: {fileID: 8300000, guid: d50a76622c1b85a4496bcaaa3b9174de, type: 3}
-    LetterIntro: {fileID: 8300000, guid: aad679770b26dd644bc2bf8a4327a639, type: 3}
-    CharImage: {fileID: 21300000, guid: 6c4205e7c7b71c24db02e4992d401ce4, type: 3}
-    CharFBX: {fileID: 2727355414084509878, guid: 7d161472406ab9c4281f3aca98ded59a, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 96e1e6056c19c40438b5ca8c7f28bf73, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 4f7c0d6af650a1d478e4f0a674e9f4ca, type: 3}
+    CharImage: {fileID: 21300000, guid: bb6c2c72eaf86464baaed68f75496730, type: 3}
+    CharFBX: {fileID: 2727355414084509878, guid: e67b665895139de4180f47d815669bee, type: 3}
   - Character: 67
-    CharacterSound: {fileID: 8300000, guid: 4a7b4655f6f3eca4ba2b12db86abdffd, type: 3}
-    LetterIntro: {fileID: 8300000, guid: a720830c549703946a6fd0fe7e1046bc, type: 3}
-    CharImage: {fileID: 21300000, guid: b6678b2e9f165b646859e604101ca783, type: 3}
-    CharFBX: {fileID: 8731904589811535652, guid: 72f5f24e930ab08469f8f874c6960662, type: 3}
+    CharacterSound: {fileID: 8300000, guid: d1b49d46201865d4eb3d8f41f71b68c9, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a3e10f003da726242af540922ae063a8, type: 3}
+    CharImage: {fileID: 21300000, guid: d3049902a2496b7409abc22f1147f39b, type: 3}
+    CharFBX: {fileID: 8731904589811535652, guid: 1f18e06ce88ed1d4897ead0a9aea4190, type: 3}
   - Character: 68
-    CharacterSound: {fileID: 8300000, guid: d15939cc039542a42b4c10d7a8a46f62, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 475b87ad8b2ab62498fe1e2a39942553, type: 3}
-    CharImage: {fileID: 21300000, guid: fc2a1897cde23d441a7c857f752aebd6, type: 3}
-    CharFBX: {fileID: 8058666825755721154, guid: 150691c93100c0443beade1a068ad7ac, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 2a90830ba955a6d4283413901a22c502, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 08aa2c0e41fd6fd48aac7698beb757ce, type: 3}
+    CharImage: {fileID: 21300000, guid: 78325d9a132aa994c86fbea6eb797471, type: 3}
+    CharFBX: {fileID: 8058666825755721154, guid: 5d5631ef5b5099448bdd742d0f6532be, type: 3}
   - Character: 69
-    CharacterSound: {fileID: 8300000, guid: d5b2bf96e2c91b74aa05902dc2b36f1a, type: 3}
-    LetterIntro: {fileID: 8300000, guid: a15612727af9688449a02560f99e839c, type: 3}
-    CharImage: {fileID: 21300000, guid: a225e59199f48d648b7f9ee775e71339, type: 3}
-    CharFBX: {fileID: 4281896831199736911, guid: 0c4dd7ed28d3b734eb84771f5877a2d8, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 188d31fb12c46774c9b74abe781aba54, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a8bc1a8f6c3613847895e841eb5f312e, type: 3}
+    CharImage: {fileID: 21300000, guid: d8a2603a834cd2d45a3265934cbd2b25, type: 3}
+    CharFBX: {fileID: 4281896831199736911, guid: e01900a3e488b1d49968f708c1758cfe, type: 3}
   - Character: 70
-    CharacterSound: {fileID: 8300000, guid: 4af4e229d72a5e24893d7df9df3362bd, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 4a52440c5b46f364493976a96f682626, type: 3}
-    CharImage: {fileID: 21300000, guid: 788882499fe62bc4fbd85d76a631b3b3, type: 3}
-    CharFBX: {fileID: 600898702907616822, guid: 864ec9995a3868a458fec345aeb60c90, type: 3}
+    CharacterSound: {fileID: 8300000, guid: ffefe352bd30dda4ab9ade78a618b259, type: 3}
+    LetterIntro: {fileID: 8300000, guid: f74aeb8e350582f4aa35820f754f31c0, type: 3}
+    CharImage: {fileID: 21300000, guid: 8676713d90b942b4c91c11ae0789aa44, type: 3}
+    CharFBX: {fileID: 600898702907616822, guid: a948ab3a37945404dbfa496231077b37, type: 3}
   - Character: 71
-    CharacterSound: {fileID: 8300000, guid: 705b3b996b07e5c4aad91ede11c9e18d, type: 3}
-    LetterIntro: {fileID: 8300000, guid: bc2912bce24145f4fb7e55b8030c7543, type: 3}
-    CharImage: {fileID: 21300000, guid: d48bab301dd30524c88860a5ff4b6804, type: 3}
-    CharFBX: {fileID: 517596171190142942, guid: 4c3316b7ba8dd7a49a5878f2fd5e584a, type: 3}
+    CharacterSound: {fileID: 8300000, guid: ef141cb95e8dd1346995c4781ac52fed, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a3dce40b7653bf5429a2c728124caafa, type: 3}
+    CharImage: {fileID: 21300000, guid: fcc240802abbf3049b11b8e99724c4c4, type: 3}
+    CharFBX: {fileID: 517596171190142942, guid: 1ab2711b6d76b744990ea69361cffcdc, type: 3}
   - Character: 72
-    CharacterSound: {fileID: 8300000, guid: e7e407d61b175ef40acc6a28c97101df, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 6978fe29b197a4d4095c1c7f92eb5549, type: 3}
-    CharImage: {fileID: 21300000, guid: 55fce4c74a9dfa84b9f1487742f5effe, type: 3}
-    CharFBX: {fileID: 5680659417590790845, guid: 79a4f18bef5c258478adbd48d668bc47, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 207bcea63963dc54c9f4cbeda49b1fd5, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 3df9058a9b982f940a27a82045d6c45e, type: 3}
+    CharImage: {fileID: 21300000, guid: ab5e0390641949e48905653e2184804c, type: 3}
+    CharFBX: {fileID: 5680659417590790845, guid: 2b14221747b1cdb4a83442f62bfa3558, type: 3}
   - Character: 73
-    CharacterSound: {fileID: 8300000, guid: 099361bbb433bdf4c85e6f4bb8d5b30f, type: 3}
-    LetterIntro: {fileID: 8300000, guid: ddc99a5d23c85564ea600ee9d5f7e60f, type: 3}
-    CharImage: {fileID: 21300000, guid: fa95f7c549882564b97e9d4b6241ff2d, type: 3}
-    CharFBX: {fileID: 7985683767929451514, guid: 2cf2b3d39674ef042af64f5e3ea9ea26, type: 3}
+    CharacterSound: {fileID: 8300000, guid: a3c5dc5e6bc1d3e4388aa2f2f4f69668, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 17a92d9b5dc584945a7c14a4fddbe998, type: 3}
+    CharImage: {fileID: 21300000, guid: 70860391baea80c4fbbee176980f6982, type: 3}
+    CharFBX: {fileID: 7985683767929451514, guid: 7e4f759a11fa4bd49900b2b1edd3dff7, type: 3}
   - Character: 74
-    CharacterSound: {fileID: 8300000, guid: ad40dd46d51aa6a488e652e10c04edf2, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 84db30f651e61bd42b354e28fbef1e27, type: 3}
-    CharImage: {fileID: 21300000, guid: f69814561d2a7c14683bf50b3a458785, type: 3}
-    CharFBX: {fileID: 9089226922951246326, guid: 4fe98e8ba88c12e428359bdc752cbc32, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 89bd0de1933d36a4381bbe90b30aac98, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a6bf49d2dfb65a74285c1c00328395b4, type: 3}
+    CharImage: {fileID: 21300000, guid: dbb9be5b6478bce498308885f608a6b9, type: 3}
+    CharFBX: {fileID: 9089226922951246326, guid: 0922caf0f46e55340bff73b96065275e, type: 3}
   - Character: 75
-    CharacterSound: {fileID: 8300000, guid: 7e85de768c86c4545aca07b249199ef0, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 04f040619e8367f478c842590592fa0e, type: 3}
-    CharImage: {fileID: 21300000, guid: 46b158291a4e1d447a06270f93f3cdaf, type: 3}
-    CharFBX: {fileID: 1864552377550142871, guid: cd81fa4ab159e984e8641143bf7be91c, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 4608aa7e89a79f249a89d18c42163ea4, type: 3}
+    LetterIntro: {fileID: 8300000, guid: f30673a422b37164a84f7dd23c8549c9, type: 3}
+    CharImage: {fileID: 21300000, guid: ce375dd82c9c5584f876b3941df7676a, type: 3}
+    CharFBX: {fileID: 1864552377550142871, guid: 47e106ce433b9184c97f308973ce0863, type: 3}
   - Character: 76
-    CharacterSound: {fileID: 8300000, guid: d63957cd553dbcc4d97a319d6a480270, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 92c7fd26fa726ee4b9fd5343feeda720, type: 3}
-    CharImage: {fileID: 21300000, guid: febc76312d8ea57448348717a8476c67, type: 3}
-    CharFBX: {fileID: 4630740216896613098, guid: 57f3509691f576945af34fc50769fe62, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 01f708b2cde56e542aff4f2456dfcd7d, type: 3}
+    LetterIntro: {fileID: 8300000, guid: bbfa6c948bb856349bcf054f68591e2e, type: 3}
+    CharImage: {fileID: 21300000, guid: efa6e95c87724e4468fe2efc3c241383, type: 3}
+    CharFBX: {fileID: 4630740216896613098, guid: df42e3b1975f23f4ab46e67553ae7955, type: 3}
   - Character: 77
-    CharacterSound: {fileID: 8300000, guid: ceef30816aaef57438a88219ed23f416, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 6878a220d000cdf42b1bbe83930a9406, type: 3}
-    CharImage: {fileID: 21300000, guid: 59829fab77a57484fbc1e1affd2255c0, type: 3}
-    CharFBX: {fileID: 3027427761275603493, guid: 03d49ceef1a04f745b376c13e349ce10, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 6cb96d0d965873941815a3c60572ce62, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 10a3dafd0d73dbe488cf37b72e44c7f5, type: 3}
+    CharImage: {fileID: 21300000, guid: 43881f064a9777e458d86d3f00738c44, type: 3}
+    CharFBX: {fileID: 3027427761275603493, guid: e737b6a05bea8134abd8cbd63219f201, type: 3}
   - Character: 78
-    CharacterSound: {fileID: 8300000, guid: a80fdd6676dc62044bc96a8c9d8b8ef1, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 2844c14f3ccdf404cb0c9731ee26dac9, type: 3}
-    CharImage: {fileID: 21300000, guid: 1f6e27d28ea07ad47b1a162943ff4ec8, type: 3}
-    CharFBX: {fileID: 622528713428958245, guid: 0db2cd91cf3c5a54584c0a2367832cb2, type: 3}
+    CharacterSound: {fileID: 8300000, guid: b942191e9e008034a8535f01f6a24e7c, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 93ad47346d9610442b7a3d2e85684bd3, type: 3}
+    CharImage: {fileID: 21300000, guid: 14f00221cd5893e47b20f983368ff06f, type: 3}
+    CharFBX: {fileID: 622528713428958245, guid: 5bb91e8bd356fc04c8c34a53940dcc24, type: 3}
   - Character: 79
-    CharacterSound: {fileID: 8300000, guid: 77e613a035ce7ab4397bff38772eef31, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 71ebe0c54f7acf34ca0a5fb2c4334d71, type: 3}
-    CharImage: {fileID: 21300000, guid: fff6316b4fa320d47a7c4d94984f0880, type: 3}
-    CharFBX: {fileID: 3927889404798842702, guid: 818460bf7260d6545b61548e9a4d8d59, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 73b110563e0c014448414a945a52eeaa, type: 3}
+    LetterIntro: {fileID: 8300000, guid: b65f4ec1da2444e41a5a750f97548d2e, type: 3}
+    CharImage: {fileID: 21300000, guid: 903ea549e4746094e8e04c5529c39a24, type: 3}
+    CharFBX: {fileID: 3927889404798842702, guid: 38e3aa7441b610d44b2f55dcd0a14abb, type: 3}
   - Character: 80
-    CharacterSound: {fileID: 8300000, guid: 45a5c920cbde3f84abc5642334392fca, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 6e149ad0fac96ee42b0d65b4e0f81b82, type: 3}
-    CharImage: {fileID: 21300000, guid: c4dffb7338b40664ea160ebdd2126ee5, type: 3}
-    CharFBX: {fileID: 7722454743777598441, guid: 5ed965967fe305d4885e26f346e58388, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 9d5c94217cee68643bf99341a57ad9bc, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 969280ad04aabb643989eec4147cb982, type: 3}
+    CharImage: {fileID: 21300000, guid: 8c444ec67a857794da0dfa6623c609d5, type: 3}
+    CharFBX: {fileID: 7722454743777598441, guid: cb974ed34215733459a3f5862a61aff9, type: 3}
   - Character: 81
-    CharacterSound: {fileID: 8300000, guid: f596fd3cbc7d17948b0b66172117962a, type: 3}
-    LetterIntro: {fileID: 8300000, guid: dc8207d19c43d8547b3a7d8f12d47321, type: 3}
-    CharImage: {fileID: 21300000, guid: 83d8f9a98d7ab7c47affebb552af031d, type: 3}
-    CharFBX: {fileID: 582681295621130778, guid: 8e63af0c1c2f86c4caad68519092a136, type: 3}
+    CharacterSound: {fileID: 8300000, guid: c315bcf18fcbc4b4ab72c5ed433ced6d, type: 3}
+    LetterIntro: {fileID: 8300000, guid: d791efb73789cd04fb77fae2195f7b3e, type: 3}
+    CharImage: {fileID: 21300000, guid: 74e04406979bac647bbaa783bd9af5da, type: 3}
+    CharFBX: {fileID: 582681295621130778, guid: c3f3bb9137ee0ad46b78a121ac12d1f3, type: 3}
   - Character: 82
-    CharacterSound: {fileID: 8300000, guid: 49e9be5cb74a7024caa00cc6618c48f6, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: a3fbb8f3a2215634ca72ca2ff9dbe979, type: 3}
-    CharFBX: {fileID: 5229523845157006443, guid: a2d90ff004abe7646b67fffbad62f77c, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 255e95fc2dba1c64bb4ecb4ec5df562e, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 2d04c527225a2a741a9ba9ba5bed2416, type: 3}
+    CharImage: {fileID: 21300000, guid: 9ac1e0be96141ea4f944b0a304cdfe01, type: 3}
+    CharFBX: {fileID: 5229523845157006443, guid: 97750614271984e45a4f79fd3470d85f, type: 3}
   - Character: 83
-    CharacterSound: {fileID: 8300000, guid: 9e0175fc4cee2694bbcd6e7149e7c882, type: 3}
-    LetterIntro: {fileID: 8300000, guid: d1343d50fd0ee094aa34d6c006cbccff, type: 3}
-    CharImage: {fileID: 21300000, guid: 787449bb5e5d340498a51c69bcf7d627, type: 3}
-    CharFBX: {fileID: 4672828201541249708, guid: 9c43851b25dd43f469a9fe7d398e326e, type: 3}
+    CharacterSound: {fileID: 8300000, guid: f8ef5922826114f489b8dcc4b04593be, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 504a96b75cea5f849866c71ad2d447ef, type: 3}
+    CharImage: {fileID: 21300000, guid: dd241d91aa14fcf41bdf9609425df8de, type: 3}
+    CharFBX: {fileID: 4672828201541249708, guid: 88bad0af1b9185040aac169650b82712, type: 3}
   - Character: 84
-    CharacterSound: {fileID: 8300000, guid: 97382bf9ac7a6194389bc8a4eb519e71, type: 3}
-    LetterIntro: {fileID: 8300000, guid: d66bd66f3a07cee43a7f383e8e4fbb7b, type: 3}
-    CharImage: {fileID: 21300000, guid: ff9d8c9d210db8143966b0eaad1dc562, type: 3}
-    CharFBX: {fileID: 6484000083388986068, guid: 2d14e07ae1dd7544b9c5914a5c8d7d95, type: 3}
+    CharacterSound: {fileID: 8300000, guid: ef8d34739557e91449d62de55a0da37f, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 4f597585aa403484da1dd912e13b6854, type: 3}
+    CharImage: {fileID: 21300000, guid: 58ed56fc81f586647bef17c49cc1ab09, type: 3}
+    CharFBX: {fileID: 6484000083388986068, guid: 72d2a480d7b39374c8f220215a0e7ab8, type: 3}
   - Character: 85
-    CharacterSound: {fileID: 8300000, guid: 5c7bd793a0c46d6498075885d0d4856e, type: 3}
-    LetterIntro: {fileID: 8300000, guid: b8d6dcb7c3e3f7f4ba05f97d59f817fe, type: 3}
-    CharImage: {fileID: 21300000, guid: 0de0ab3291801dd41a59eca99b190f32, type: 3}
-    CharFBX: {fileID: 9119796145347764439, guid: 1ec664db0c136de42b2532dabce521e4, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 6fae619c291238243ad5fe4b77db2d08, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a463be48660bb2b48a008f2613d69bda, type: 3}
+    CharImage: {fileID: 21300000, guid: e3ef356b28fe46249ba2d231781db49b, type: 3}
+    CharFBX: {fileID: 9119796145347764439, guid: 9ca853046d1d71f4195fd370c19620be, type: 3}
   - Character: 86
-    CharacterSound: {fileID: 8300000, guid: 2c110d05f959aa640a53e13218da054e, type: 3}
-    LetterIntro: {fileID: 8300000, guid: c5672fe4fed7ec14481cc5492a17b6d4, type: 3}
-    CharImage: {fileID: 21300000, guid: fcc15a9afd75d7748b55028c7036bae2, type: 3}
-    CharFBX: {fileID: 7256247381718053225, guid: 40f67de6e021cdb4283f52119179b3cb, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 7e79192604bf683418cc8a7f7f76c97c, type: 3}
+    LetterIntro: {fileID: 8300000, guid: b7c8011dceaf38144b1e005adc4578fd, type: 3}
+    CharImage: {fileID: 21300000, guid: 90a8ff8bac8b138449168d06c3136334, type: 3}
+    CharFBX: {fileID: 7256247381718053225, guid: 3d2026275eed2a749bbffc30c2016ca6, type: 3}
   - Character: 87
-    CharacterSound: {fileID: 8300000, guid: 5e1a9ead59c0a2a44b62811d951bcf30, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 0f9ddb1a32c2dc445a24910146496edd, type: 3}
-    CharImage: {fileID: 21300000, guid: 3a7c404656b3d2d41861549d975461b7, type: 3}
-    CharFBX: {fileID: 3343355526110769576, guid: 8c92dcc4e0a4c6240a11d4fc48e739d1, type: 3}
+    CharacterSound: {fileID: 8300000, guid: ffd0001502deb28408079c349c73783d, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 5dcbc9ff51a7ab84383da3340d9ef89e, type: 3}
+    CharImage: {fileID: 21300000, guid: 2cb21acd61d75ef4fb8e1cbda5adfc92, type: 3}
+    CharFBX: {fileID: 3343355526110769576, guid: a5330320645026f458b7b0c254e01ee2, type: 3}
   - Character: 88
-    CharacterSound: {fileID: 8300000, guid: f13d780db50436f488999684cddcdca0, type: 3}
-    LetterIntro: {fileID: 8300000, guid: b5150b57a71215048a6bc4b5b9b93a66, type: 3}
-    CharImage: {fileID: 21300000, guid: 57abba4cc5872644ba3f691103d58dba, type: 3}
-    CharFBX: {fileID: 8312328656132405412, guid: 86a986eb31408dc4d90531a42642a5c1, type: 3}
+    CharacterSound: {fileID: 8300000, guid: f1436df7a0f347f4bba0021e4c3c9ff0, type: 3}
+    LetterIntro: {fileID: 8300000, guid: c1b6be2d0f5c48445b444af18243d083, type: 3}
+    CharImage: {fileID: 21300000, guid: d91816c68f8eab34da8e559d068d07f0, type: 3}
+    CharFBX: {fileID: 8312328656132405412, guid: 3d31238248742174397bc85d13bfe219, type: 3}
   - Character: 89
-    CharacterSound: {fileID: 8300000, guid: 4b4f14149ae1a844aa5112b4aebe5585, type: 3}
-    LetterIntro: {fileID: 8300000, guid: 9030dbb7dcf311e4492d8bdbcfc804b5, type: 3}
-    CharImage: {fileID: 21300000, guid: 01a61b108f6ebdf4c82be3685d9d1637, type: 3}
-    CharFBX: {fileID: 2490380941411718078, guid: 4ce2708e30a5cfa4b881e869653664b9, type: 3}
+    CharacterSound: {fileID: 8300000, guid: eaaed550cae3303439f3dab0ca14137c, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 52debfc72abc206459145aa95c4b2a8a, type: 3}
+    CharImage: {fileID: 21300000, guid: 5c2dca90af4bcd846876cf2c4155292a, type: 3}
+    CharFBX: {fileID: 2490380941411718078, guid: 0793616a3a747674d9312b96abe3e0f5, type: 3}
   - Character: 90
-    CharacterSound: {fileID: 8300000, guid: 63d23e9118cb23445be5bae56e8bffbe, type: 3}
-    LetterIntro: {fileID: 8300000, guid: d460bfac5d5897242be4fbde2596f328, type: 3}
-    CharImage: {fileID: 21300000, guid: aa7586ab660fc2d40829fd65e40106bc, type: 3}
-    CharFBX: {fileID: 871286110955824610, guid: c21666d04509d1b49bc0bd51c3a94e53, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 10085d7ed8448b345932895757ba5deb, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 02439070162737c469a1bd030fdf7bcd, type: 3}
+    CharImage: {fileID: 21300000, guid: 7640e2a37d042044f9a953e59d1d48ed, type: 3}
+    CharFBX: {fileID: 871286110955824610, guid: 51b6df2d8ebcd3f4f875c0e5d22fcfc2, type: 3}
   arabicCharactersData:
   - Character: 1575
-    CharacterSound: {fileID: 8300000, guid: 36810454c330c5c46b5a011b6fd1418f, type: 3}
-    LetterIntro: {fileID: 8300000, guid: f67187365e98d314391b0e37e2286f84, type: 3}
-    CharImage: {fileID: 21300000, guid: fdfe4504888410e4bafea0b125fb803b, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 7783a906a61b24b41ac628fe0d9393b2, type: 3}
+    CharacterSound: {fileID: 8300000, guid: d8d0d4e2e3931e54a9317e31e0b1f144, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 1e1ee4eea19423446b89cfdd8de9e73e, type: 3}
+    CharImage: {fileID: 21300000, guid: 05277b32a31e94c46ab566bc8c8b0afb, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 3784da3bb7ff40f4990d534bc58e36c1, type: 3}
   - Character: 1576
-    CharacterSound: {fileID: 8300000, guid: c28c75a9a1f2b9f45a6f46f8911b79f0, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: b6066b94158b2ff4284d8ab63dfa26b3, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: d3b458de072c34f4caa0a3fa269b6a87, type: 3}
+    CharacterSound: {fileID: 8300000, guid: d03bdbaba16d98d4bb03cd7aa5b069b5, type: 3}
+    LetterIntro: {fileID: 8300000, guid: c9b79b555722ccd4ba9d0bf347490fdb, type: 3}
+    CharImage: {fileID: 21300000, guid: c9f23e3a4c4b9f140b9db17f3ab270a9, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 7b1e9a3247479454ca35766c46035762, type: 3}
   - Character: 1578
-    CharacterSound: {fileID: 8300000, guid: e4919eafc6fa52746bd2fc41e5d4fa2c, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 101c4114b514ec7488f8d3506f41033e, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 5a307702daa1b824eb219fcdbca000c3, type: 3}
+    CharacterSound: {fileID: 8300000, guid: f4c4b9a9751931349863d8bffa3b4301, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 1d200bda11f715641945b811bb9af822, type: 3}
+    CharImage: {fileID: 21300000, guid: 2b9e464b983a25d468eb8820315cb48f, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 281385267eadb364d9596aa9a1a01238, type: 3}
   - Character: 1579
-    CharacterSound: {fileID: 8300000, guid: d823a06482778364985b469d8bf1be80, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 9823a7ee24a01d842bc27c45a9d4c618, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 6df108f8052425444884232dd3b5f7e4, type: 3}
+    CharacterSound: {fileID: 8300000, guid: b5015d91de89d524d89b5b4f435b87ac, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 2819912641251c740b2625b18152d19d, type: 3}
+    CharImage: {fileID: 21300000, guid: 6126fbab49c24034dbaa9bddee39bb61, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 0529f9e948223e94090f2b958a83b305, type: 3}
   - Character: 1580
-    CharacterSound: {fileID: 8300000, guid: a0cc071636c511a4795a996f2f2e8703, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: d6d17fe4ea8d5f2428a1e4b2666f9877, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 0c16c327efab77c4dbe8666b68f98995, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 386b0a6bec3274840827e197645e6c8c, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 016dd656ef7fab247a4da3be21c6c69e, type: 3}
+    CharImage: {fileID: 21300000, guid: fa4e050020c48d943890a9ffadcd5e00, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 6eacd07d3ebb5914397801677ce921b2, type: 3}
   - Character: 1581
-    CharacterSound: {fileID: 8300000, guid: cee89b5a5b4f75048a70245db4c8aaf0, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 74a81525aa00c0e409bbc047d8f6a02f, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 630a756dcdc4d244db273a2018612527, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 13c92ae3e0dab274abc26694b4dea7ce, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a7cc922f1eee38f49a3ff8ae6665efd3, type: 3}
+    CharImage: {fileID: 21300000, guid: 88be6135aa7fabe4cbc63ea602f37f4d, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 5b55f791be2630747b169e56ac740a43, type: 3}
   - Character: 1582
-    CharacterSound: {fileID: 8300000, guid: d27536f9a1433c4488203e8f17c615c6, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: a1a48b75b23ca9440a7786a576a5ee2d, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 596c9663637b0694ebe1626f8fc6f378, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 8b9778b0bbcc4b645b84ea6477e38e77, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 3602a029d4b0a0540a406502af35240b, type: 3}
+    CharImage: {fileID: 21300000, guid: e25e1f255f9bffc48b6a08873dbd329d, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 955293637981abd4da9c734ae742ad0c, type: 3}
   - Character: 1583
-    CharacterSound: {fileID: 8300000, guid: 22cd91e3eabedc241bdcfe8e34b330de, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 55706e46877fd7a48a1e2fc9ac0331d4, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 97f3e3fcd6b2b5b429f303622055c0b9, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 6ddb5dcdfd0a01745b4d208fd3662ba3, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 923de92e1a424f34993daf30407390c6, type: 3}
+    CharImage: {fileID: 21300000, guid: a7839e759c57027428616d4872cf6633, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: e44a75d65090bc64cb554004abcd9a35, type: 3}
   - Character: 1584
-    CharacterSound: {fileID: 8300000, guid: 29fec7137c75e414f9ccbddd48691ea9, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 1da6535deb7a5994da2ed8b162b514fa, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 7aaa5095c77eebb4593d205ee2e58741, type: 3}
+    CharacterSound: {fileID: 8300000, guid: db634f382e2358e4c9e1fb28e1bfab71, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 3f54ac954bff7ad4d86e82664a495d5c, type: 3}
+    CharImage: {fileID: 21300000, guid: 7c51256a902ef4a4890010d51ba0607b, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: c8588c5b66d494744a3dcea7a17df0e6, type: 3}
   - Character: 1585
-    CharacterSound: {fileID: 8300000, guid: f7d95338e559ee641a582d7db7114b5c, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: d089522668a08234e8ca2f9952f5574e, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: fb6f2fd7c8b12be4ea1f3c043d8fb034, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 37a03feb8287f714a987c2493973bbf9, type: 3}
+    LetterIntro: {fileID: 8300000, guid: e2332f59ade32854a8df9de8c3c8a02c, type: 3}
+    CharImage: {fileID: 21300000, guid: 1b5fc5360177f964f945fe59e3f9ebdc, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 4894fef97346592499f158584d13d76d, type: 3}
   - Character: 1586
-    CharacterSound: {fileID: 8300000, guid: 940a4c747133ed141aa23ea177f9b307, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: cfb777729603d344f802c2905713018c, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: dac5614338522434aaebe83905eab4c6, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 5a6d1711cc866d34b918ab452f321b9e, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 181f6e77446581045bc7438f6b55095f, type: 3}
+    CharImage: {fileID: 21300000, guid: a42363d5c91fa694d95765f1998cfb8d, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 6bbc235ea9e5f594c924f7e19963f75b, type: 3}
   - Character: 1587
-    CharacterSound: {fileID: 8300000, guid: a9ac72deb599aaf48a2e70ffd7714f84, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 93c57f351468a174b90e018384158fda, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 5e56cafc7ca41724787ab189913691a7, type: 3}
+    CharacterSound: {fileID: 8300000, guid: f98ce2fda3b60f44aa8200b8668cc3bb, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 0c169e03495584e45aeb7d8c0287f597, type: 3}
+    CharImage: {fileID: 21300000, guid: dc02be19273161b4a8e27829a678c142, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: e80fcb495a9ef8f47bdcd0fbb2b6fd0c, type: 3}
   - Character: 1588
-    CharacterSound: {fileID: 8300000, guid: ce51ba61ecc3bb047a8ef134d0d00f65, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 926478d3f4d3391488caa731a753bed5, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 83dab983e9cc0d04792439c5b9a27e6a, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 2d7a8b7a7b082624882318274d4e63ed, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 23d9d35a9dd6ebe438c880046efd7c97, type: 3}
+    CharImage: {fileID: 21300000, guid: 0bbc065dc9f417e45abaa4d2bf71e435, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 26e03d5b740b5e843a72553f0da56e9e, type: 3}
   - Character: 1589
-    CharacterSound: {fileID: 8300000, guid: 1d7b0feff7dcadb428fb41d9d8eff784, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 8c5755709987ab048be99ed4234876ba, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 321a5d0f60c7938458eb7a845166fe27, type: 3}
+    CharacterSound: {fileID: 8300000, guid: c0fa906f96af33f479b1e80f59e6d53d, type: 3}
+    LetterIntro: {fileID: 8300000, guid: dc232f204a7e974498cf8fe42a3658fe, type: 3}
+    CharImage: {fileID: 21300000, guid: d3460ce929ed1e247a840d72ea54ef09, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 3480fff8ff0f29b419d7589dfa9a58df, type: 3}
   - Character: 1590
-    CharacterSound: {fileID: 8300000, guid: 96e97a4f9a3d1e044be08dd5fb9a004f, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 481d1b2cccee25e4d9f983f5a726ad4f, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: b58bca01803b7ca4aa1a20ae63b4d96c, type: 3}
+    CharacterSound: {fileID: 8300000, guid: a9ca86f798789ed48bfd39e90e75c45a, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 9669a912a3e628c42b064cddf38479c2, type: 3}
+    CharImage: {fileID: 21300000, guid: 38d22b4ed2fbded48bc6cd9e9192748b, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: b6da793cd32cbfb418a1560cc0d18094, type: 3}
   - Character: 1591
-    CharacterSound: {fileID: 8300000, guid: 118ff84ad56b05442b4ec0653b3ed2de, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 84fd4733baf012644a0dbc154d1403f3, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: d2e19f3f0f1d24b4d91f536ac09885bd, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 8f5587ef849074e4da0ed0d6b8a111c7, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 9d61753bc0211634f891027ba5aad04d, type: 3}
+    CharImage: {fileID: 21300000, guid: 235ba82c0a717cf41b3d7698ff619adf, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: dc830d11b830df042b62f90cbf5c881a, type: 3}
   - Character: 1592
-    CharacterSound: {fileID: 8300000, guid: 153b2ee12ac5f5047a86af83f97ac826, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 48ab1cbadf17f124094386b5758f8418, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: a0bfbb60a8f46a44ebfacfc4d108282f, type: 3}
+    CharacterSound: {fileID: 8300000, guid: f1074dbcc3bd3814bb6a5ece5421a66c, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 3707a96f202223a49a808933df6466b0, type: 3}
+    CharImage: {fileID: 21300000, guid: 2d217a77a2d42564ab97ec20aacc8722, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 1cef3f2e4800bbb4ba4092b5ace9b2ec, type: 3}
   - Character: 1593
-    CharacterSound: {fileID: 8300000, guid: d0fe66bbc0ff0b04c8961956d23fdc6a, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: b60020dca59e45a4aa311c3b3720e7c9, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 6db1c53d0cca6a841a5141d487218642, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 8d56a27e39de13e428e6505ec755c621, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 6b7a07e8015183a45af031920cfd1f46, type: 3}
+    CharImage: {fileID: 21300000, guid: 4420485214518ab4eb838bf3396e67c2, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: be25acd9147006d49a13842cd64878f3, type: 3}
   - Character: 1594
-    CharacterSound: {fileID: 8300000, guid: fff2add9e60f9724f9f30bf8b4000771, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 5def82b096d882a47852f0ace05dc916, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: cf0b6bf1baabf7d46a70ea0345036e5b, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 4aaeb6525ee4c5046b3309de2d455efb, type: 3}
+    LetterIntro: {fileID: 8300000, guid: c844b98774f11684ba516878d676f906, type: 3}
+    CharImage: {fileID: 21300000, guid: beb217ff7c8451e4dbd7d9db5f6fd120, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 5eff53a220d0b1c46b62555950edbd62, type: 3}
   - Character: 1601
-    CharacterSound: {fileID: 8300000, guid: 421c4ea038e3b8b4586159fe495bbfcb, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 47f174d25b2f2af4a9a50d28caba82b8, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 292223f3fba25bd42b07cda1019ee368, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 24fafe5e80d7c9749a72401adeed0d78, type: 3}
+    LetterIntro: {fileID: 8300000, guid: dc7084d5f38e987449091f1d4ba5d04d, type: 3}
+    CharImage: {fileID: 21300000, guid: bdf02ad2c3ea9244f9b73a24ed66c8f6, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 63b897c8343540143bd33bf9c036101e, type: 3}
   - Character: 1602
-    CharacterSound: {fileID: 8300000, guid: d9c1962bbc3fd66449ae31aaf725dc51, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 0fa0208fee450e14795e482edfe8e609, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 61b5c816df6127b4d8740d03f518eacc, type: 3}
+    CharacterSound: {fileID: 8300000, guid: bd7fc6d3b49cdc740a675086aef73fcf, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 51105c6ea014e0c45926e2dbea892446, type: 3}
+    CharImage: {fileID: 21300000, guid: 4d570c353d3d06a4d9c5ecc145245381, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 0dcb6383f39860f4b8a8b112c59eaa88, type: 3}
   - Character: 1603
-    CharacterSound: {fileID: 8300000, guid: ae3f575d16dd3bc4a8849f24b6e8f501, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: a1299ef269b999d4b8f9ac07e990e73c, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 4ce7d9d5cc6073748859af5736e424a2, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 5181b54a0b79e15419036a6c8408dc9a, type: 3}
+    LetterIntro: {fileID: 8300000, guid: d1187b1ea05aff44ebc47c907dcd28f7, type: 3}
+    CharImage: {fileID: 21300000, guid: 16ef425334e40b840aa6519ae2987d62, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: b758d25ab84b5da4888f3a3926f353c8, type: 3}
   - Character: 1604
-    CharacterSound: {fileID: 8300000, guid: d1bd81b06ef701246934191086e76458, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: d8e1959782fc67d4f97ccbef14fcdd95, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: aac771e2eb9ec2d4fb556e6474a951ce, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 2c7e2e3e56f901c45ad39ea61b5c2134, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 1e9c668d287350d4492a3880a3985b0f, type: 3}
+    CharImage: {fileID: 21300000, guid: 301aea493ff64ea4a9f57e8f06b7bc6b, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 93ec2fec826c7b74fb8aadf6117a8ffb, type: 3}
   - Character: 1605
-    CharacterSound: {fileID: 8300000, guid: b8ebfaa15e250964ba7eb9938132766b, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 4601dcd6e5d84684ab987a27842a6c47, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: f7bc44d44ea7f3e47944a0f083c384eb, type: 3}
+    CharacterSound: {fileID: 8300000, guid: ba107788a64057949b8c172c3f9fcf9a, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a1c14fbc59927d64ba71a65fd625501f, type: 3}
+    CharImage: {fileID: 21300000, guid: d6480fee33583c445b3a0e2883d8c5c5, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 2d66a53d88a5e094782dd7ab25d842c8, type: 3}
   - Character: 1606
-    CharacterSound: {fileID: 8300000, guid: 3b0f9cbcd86cf784f8fc5d857b0f96dd, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: dc8ec3e59bbd21d4dbd4d0b2eb4ccac2, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: df79891f06933af4891e3e24012eb58a, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 9043ed3015538304eb3f681e816c6430, type: 3}
+    LetterIntro: {fileID: 8300000, guid: ffc3185875cf5d0468cd015649794d90, type: 3}
+    CharImage: {fileID: 21300000, guid: d37c9d880e12f5e44989adb2bc763a8d, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 951262dd108f9fd4fb0bd7406f5c3ee9, type: 3}
   - Character: 1607
-    CharacterSound: {fileID: 8300000, guid: 200c45d4796839f4bb81d38f3361f85e, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 23b1fec7efbc78e4697693162c032074, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: f3374efe7e5eaba49ac58648c45d61d6, type: 3}
+    CharacterSound: {fileID: 8300000, guid: a667ba055d814944ebf2f08e40db1f38, type: 3}
+    LetterIntro: {fileID: 8300000, guid: b671bf0c9cc92c842a3929815e7905d7, type: 3}
+    CharImage: {fileID: 21300000, guid: e66bccd64c02eb148bff633e731f171e, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: dcb27dbd9165f524a8da4873797773ef, type: 3}
   - Character: 1608
-    CharacterSound: {fileID: 8300000, guid: b8d57ddccb86e4144b2f5f8fce163409, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 0c821f52d57f82a48b5b400bead9230d, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 46c284799a99f844fad6ea981d7e5bd0, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 64c4de314fee26e45a044e718b2a5305, type: 3}
+    LetterIntro: {fileID: 8300000, guid: febbd4b8c4d3a5d4fa6b6dad7fea6737, type: 3}
+    CharImage: {fileID: 21300000, guid: f1af1deaff176a1498825a7073a1206d, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: b1e528b4414e8ec4891b1180335a28a2, type: 3}
   - Character: 1610
-    CharacterSound: {fileID: 8300000, guid: 95572fcb0bfa51b47a9df73e7ae143b7, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 9914d27ce682e9745a047a5286742312, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 0abe9f0b37307d444ad40bbcc3c82584, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 1813c40feef5cfd49ae660e696fe8848, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 37b3861f9ec04e143be28cf1fd555f7c, type: 3}
+    CharImage: {fileID: 21300000, guid: 18b2fee9dec6c8f49bd7113cb31e1abb, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: a3d2bd15c97c0504b8db28cb3755767d, type: 3}
   englishNumberData:
   - Character: 48
-    CharacterSound: {fileID: 8300000, guid: 6e36649c6e207ea47bc1bc14070afa6e, type: 3}
-    LetterIntro: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: d72547cf028f76f4487c7a7d9ab7f74b, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 9d450c3610f5ebb4c8e1d0e430920e51, type: 3}
     CharImage: {fileID: 0}
-    CharFBX: {fileID: 919132149155446097, guid: cde4f90ac82f4a549946484a3bbd9c10, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 1dd087c5e5ed10146ab1f11d8ee4c476, type: 3}
   - Character: 49
-    CharacterSound: {fileID: 8300000, guid: 2f74c64641b105946943a158d55701c8, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: d82b60ce7497d734e988b436ac993ecc, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: bd64124834c4326438e98a52c761042e, type: 3}
+    CharacterSound: {fileID: 8300000, guid: b25a0d96ebaee094e9b2cbc557879fcb, type: 3}
+    LetterIntro: {fileID: 8300000, guid: a8ccaae0feee9ff47ade12a0189205cc, type: 3}
+    CharImage: {fileID: 21300000, guid: 2d0b0cb31b9d3cc4bb52e7f1b4563898, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 1d4107e027867a94eaed7735fc5c182b, type: 3}
   - Character: 50
-    CharacterSound: {fileID: 8300000, guid: 37aa777954e0adf4b9ee0685fef495ed, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: b6852726c95b259459ab1b82049287e5, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 072bc5cec2060144e87eb0444826811f, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 2f7c35b0de4c5aa4b93466090b8a29c8, type: 3}
+    LetterIntro: {fileID: 8300000, guid: b5f4b22308f627f4c9f09ddf32811765, type: 3}
+    CharImage: {fileID: 21300000, guid: d2afc192fdbba3146a9beeeb6cb5197e, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 77628b4851d639247ac75b7c32aaa140, type: 3}
   - Character: 51
-    CharacterSound: {fileID: 8300000, guid: 5d7af24714754c64dae77460bbe4832b, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 4d747dc296c90774e94fd47dde160a6b, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: e3d2fdd06fba0ec4f934f4f23a1b6b32, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 8867b3ac20c5cfd4ebde89901f93d8de, type: 3}
+    LetterIntro: {fileID: 8300000, guid: b32899a845f1aba44bd16f179f34ff28, type: 3}
+    CharImage: {fileID: 21300000, guid: 0b982c46b4b9a824089c2d566cb123e1, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: e6fe5350d24cf9e47bff724bd6672025, type: 3}
   - Character: 52
-    CharacterSound: {fileID: 8300000, guid: 66ff81d82311b27458c0f0d4dda2c4c6, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 24d344b8912b0054db1ef23ab963bd26, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: b1b6d25ae8d2bd141b7d436d82a9bc07, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 716ead627c54bbb4ebbdcb8388361e35, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 97ba44f8fb781b748bd4a9a399fdc92a, type: 3}
+    CharImage: {fileID: 21300000, guid: cd032db770dd8a040a4e14c4290f1261, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 4074d8bffc912aa439d7d2c8cfd42554, type: 3}
   - Character: 53
-    CharacterSound: {fileID: 8300000, guid: a990938b231c4c546ad6ab7595ec404e, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: db4654e28fb3fff4ead90c018b334dd0, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 8220bc7d9a1f1c34dbc4b7048f51a0c1, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 158f22303ab9bad4ba6ecc48d0528ddc, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 837c4a5c228a32f418f0fbb268feab30, type: 3}
+    CharImage: {fileID: 21300000, guid: c904c835ba7bee2408d31c39569930da, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 11b66831c3f23d84fbf7ef13ed35d940, type: 3}
   - Character: 54
-    CharacterSound: {fileID: 8300000, guid: 725d75349fb1ab04cb868a04d203c0c3, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 87a02ad3655d64c41b6db1e8bd53fe36, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: bad7a0d1bd9e92f439ce6732fadf4840, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 5b137e3dceea9b14e8c62c36c64e6fa7, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 27fe0119c7799b44e9b067541c06466e, type: 3}
+    CharImage: {fileID: 21300000, guid: 4070e15163eccd447906a3f7a1c91a94, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 3989a554699ea354ab40c32e059ca35c, type: 3}
   - Character: 55
-    CharacterSound: {fileID: 8300000, guid: bbec8b6c6d30e594a859e41138bf2cda, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: f236dab59483f604a82317aa9af97f0b, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 651140666d72f6947b6463bf32527050, type: 3}
+    CharacterSound: {fileID: 8300000, guid: a81bbc87a72809747b039a287800672c, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 982c261cfd321ed47b2143a3bcc8b49f, type: 3}
+    CharImage: {fileID: 21300000, guid: 0e5d4a78acf518845898eb942fae8a42, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 5ba1ad33b2abb26439ee9c41a2a4bde4, type: 3}
   - Character: 56
-    CharacterSound: {fileID: 8300000, guid: 6e13d54119a9511468e94dbd2b274d0f, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: e0757ce61e88f234a8876e688629a56b, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 7646b35593cd38c499d10938c725e909, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 4ad356f9cf6b08f438f850264abfa085, type: 3}
+    LetterIntro: {fileID: 8300000, guid: fb917b7b59a47d34b99b8cb7036eacf0, type: 3}
+    CharImage: {fileID: 21300000, guid: 0ab87ad242b70004f80b47503728d5a7, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 80ae4efd727877446bc49ecd95994807, type: 3}
   - Character: 57
-    CharacterSound: {fileID: 8300000, guid: 4c6fac22f5955aa4ca876893d248fac7, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 240797022b9555f4a83a308635e55982, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 06e6cebf99625384d995cbe1b4297b9b, type: 3}
+    CharacterSound: {fileID: 8300000, guid: e66d9543240895f4696e84dee0a3c037, type: 3}
+    LetterIntro: {fileID: 8300000, guid: c9c1391b67db5044a8538b4f953dae6a, type: 3}
+    CharImage: {fileID: 21300000, guid: f6be3a8b57f8117439ac3a10cac67ae0, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 78ef2ce4e7060be469cb55b80390248e, type: 3}
   arabicNumberData:
   - Character: 1632
-    CharacterSound: {fileID: 8300000, guid: 08373578d5d2f7d468e8a582d2cf98ad, type: 3}
-    LetterIntro: {fileID: 0}
+    CharacterSound: {fileID: 8300000, guid: 888f839a6930b7f40bf71c194305530d, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 24a4cf3d2bc6a2a4fbadc8f3313b3ed9, type: 3}
     CharImage: {fileID: 0}
     CharFBX: {fileID: 0}
   - Character: 1633
-    CharacterSound: {fileID: 8300000, guid: 3250ba031146075459e4a52fa5263bc3, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: ee4df998d4d677a4bb611cdc10b5393a, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 83ef1006aa120d140bbbb5054815ad24, type: 3}
+    CharacterSound: {fileID: 8300000, guid: cd00488b10aa4ca4ca1b7546b5184f51, type: 3}
+    LetterIntro: {fileID: 8300000, guid: bb31ab338f94b0048970130ff4e3a8dc, type: 3}
+    CharImage: {fileID: 21300000, guid: 294e193e2f1c9df47bf8c9096be4b57b, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 0160d272d5fa5564e8749d3e4d7e7aac, type: 3}
   - Character: 1634
-    CharacterSound: {fileID: 8300000, guid: c4327d7874faf7e4cbe2d7d92e083558, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 918c30a2c8883ae4c8982b047d21b1e7, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 288333e1ff5f77d4faf1418857519642, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 6e1d34780ee6c0c459cbbe5bf81e5e60, type: 3}
+    LetterIntro: {fileID: 8300000, guid: e31b91dc79173e044be901bd4441c9eb, type: 3}
+    CharImage: {fileID: 21300000, guid: 8a17493bbd79c5140bbf9e8560d49e90, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 6681db1a114ca0846b7e79cc46149217, type: 3}
   - Character: 1635
-    CharacterSound: {fileID: 8300000, guid: 44c2a444ad7c6024a8bbbed7e971f3f7, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: c479d262ee44eca41b4b3e63b71dcd6b, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 06c767e25fd3b8a40a2228ffb65d1507, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 1c0d42c922607fe4fa53bceb2d6e0f1a, type: 3}
+    LetterIntro: {fileID: 8300000, guid: dad30562883a9a649943c97dbee9033b, type: 3}
+    CharImage: {fileID: 21300000, guid: 6ceac553b3217c943a20c416402c6207, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 18eabd6ebc3d3264286f98005cf39986, type: 3}
   - Character: 1636
-    CharacterSound: {fileID: 8300000, guid: 3664403a760450849a7bae05ceedc424, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 7cda9d4972454ee4cbd2131940349ea8, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 948028ec44b0f634f92b99ed191cfc04, type: 3}
+    CharacterSound: {fileID: 8300000, guid: bfe7604a53782934b9ff646b929f7079, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 20ad8915ed537f143a9e9d611c872e21, type: 3}
+    CharImage: {fileID: 21300000, guid: dea8bb7c95f781a49b43cbca74863349, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 56572754cf45f5144a80f8f793a53d93, type: 3}
   - Character: 1637
-    CharacterSound: {fileID: 8300000, guid: 68c7249503e3bd4488182609aca124c5, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: bca77cebb7e2d63439f20929f7b51927, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 89012ce09b58c01469b48b030d530f17, type: 3}
+    CharacterSound: {fileID: 8300000, guid: cdb97bea08d96934a8b025f076b0dea1, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 88144026f0707714c8a7333190b6895e, type: 3}
+    CharImage: {fileID: 21300000, guid: 016a98ef0c62dae4eb4a65b979c93d72, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 067f73cf804a42e4f9b1e8a2cb6f4381, type: 3}
   - Character: 1638
-    CharacterSound: {fileID: 8300000, guid: a9ef848fd6802794e947f0ee906444ee, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: fabfefa195246884fa7ca7b91e040e4f, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: d4ad39bf7eedcb246b8d702f2c2460a9, type: 3}
+    CharacterSound: {fileID: 8300000, guid: e6d74d055e41f944d8a6096883693d45, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 731bbc2d8eb58fa4291e52f3eb40ccca, type: 3}
+    CharImage: {fileID: 21300000, guid: 655f9065a30138946a3909c952e1946c, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: be94f03d4296b44428a0786bff2da5d1, type: 3}
   - Character: 1639
-    CharacterSound: {fileID: 8300000, guid: ff9cfe8c989148b449ee2dfb884f5d24, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: ec39c07dc4c9bc947b8df27ef7786e7c, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: 67b242acd64e43e4c9d58ddeebc88f1f, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 7027cf68c4197e4409f4b778acd2d644, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 97f60a1c6ec17f4459aaaa918b374ed4, type: 3}
+    CharImage: {fileID: 21300000, guid: b6515f9695a6c5d4c9b647e3a77a6eba, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 394a2e927b7ba914ea15ae6b0823da63, type: 3}
   - Character: 1640
-    CharacterSound: {fileID: 8300000, guid: f833eb6a6b971b144bf29139385026a7, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 7df81ce625d54174684e4569343a4623, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: aac1628420657f340ac5b808aac7203e, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 338199c95ddc61b4da4297db4a7e068b, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 1612c04f764668c49a04c6dbe6fc3609, type: 3}
+    CharImage: {fileID: 21300000, guid: 7ba4d41fab77c0244886dc6962bb527f, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 1003473a52c8d0044bdbf18aa88323ea, type: 3}
   - Character: 1641
-    CharacterSound: {fileID: 8300000, guid: 79865355df5d6224c9030c9872fc8b74, type: 3}
-    LetterIntro: {fileID: 0}
-    CharImage: {fileID: 21300000, guid: 95b868fc85a71f54db456008d4a1e197, type: 3}
-    CharFBX: {fileID: 919132149155446097, guid: c732c4bca507015498f87eb9ac88c9da, type: 3}
+    CharacterSound: {fileID: 8300000, guid: 2c52801755dc73c4b80ebc2221f7d418, type: 3}
+    LetterIntro: {fileID: 8300000, guid: 91fed89c07aa64f40b128572f6f73d69, type: 3}
+    CharImage: {fileID: 21300000, guid: 577a600c07c7b604b960c1312dfd042f, type: 3}
+    CharFBX: {fileID: 919132149155446097, guid: 394bfc392c731224fb0849e4e2e50bd3, type: 3}
   currentIndex: 0
 --- !u!4 &1319394098
 Transform:

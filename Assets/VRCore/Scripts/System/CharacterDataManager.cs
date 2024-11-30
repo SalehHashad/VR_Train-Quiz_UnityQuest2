@@ -25,6 +25,13 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
     private readonly string englishNumbers = "0123456789";
     private readonly string arabicNumbers = "٠١٢٣٤٥٦٧٨٩";
 
+    //const param for Saleh to change the name of the auido you need to load it 
+    private readonly string englishFileAudioName = "Exploring the Letter";
+    private readonly string arabicFileAudioName = "Intro";
+    private readonly string englisgNumFileAudioName = "EnIntroNum";
+    private readonly string arabicNumFileAudioName = "ArIntroNum";
+
+
     private List<LevelCharacter> CurrentData => GetCurrentCategoryData();
     public int currentIndex = 0;
 
@@ -55,22 +62,22 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
 
         foreach (char c in englishChars)
         {
-            AddCharacterToList(c, englishCharactersData);
+            AddCharacterToList(c, englishCharactersData,englishFileAudioName);
         }
 
         foreach (char c in arabicChars)
         {
-            AddCharacterToList(c, arabicCharactersData);
+            AddCharacterToList(c, arabicCharactersData,arabicFileAudioName);
         }
 
         foreach (char c in englishNumbers)
         {
-            AddCharacterToList(c, englishNumberData);
+            AddCharacterToList(c, englishNumberData,englisgNumFileAudioName);
         }
 
         foreach (char c in arabicNumbers)
         {
-            AddCharacterToList(c, arabicNumberData);
+            AddCharacterToList(c, arabicNumberData,arabicNumFileAudioName);
         }
 
         Debug.Log("Finished loading all character resources");
@@ -117,7 +124,7 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
         {
             if (!englishCharactersData.Exists(x => x.Character == c))
             {
-                AddCharacterToList(c, englishCharactersData);
+                AddCharacterToList(c, englishCharactersData, englishFileAudioName);
             }
         }
     }
@@ -129,7 +136,7 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
         {
             if (!arabicCharactersData.Exists(x => x.Character == c))
             {
-                AddCharacterToList(c, arabicCharactersData);
+                AddCharacterToList(c, arabicCharactersData,arabicFileAudioName);
             }
         }
     }
@@ -141,7 +148,7 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
         {
             if (!englishNumberData.Exists(x => x.Character == c))
             {
-                AddCharacterToList(c, englishNumberData);
+                AddCharacterToList(c, englishNumberData,englisgNumFileAudioName);
             }
         }
     }
@@ -153,7 +160,7 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
         {
             if (!arabicNumberData.Exists(x => x.Character == c))
             {
-                AddCharacterToList(c, arabicNumberData);
+                AddCharacterToList(c, arabicNumberData,arabicNumFileAudioName);
             }
         }
     }
@@ -176,10 +183,10 @@ public class CharacterDataManager : MonoBehaviour, ICharacterDataProvider
     #endregion
 
     #region Helper Functions
-    private void AddCharacterToList(char character, List<LevelCharacter> list)
+    private void AddCharacterToList(char character, List<LevelCharacter> list, string filename)
     {
         var clip = Resources.Load<AudioClip>($"Audio/{character}");
-        var clipIntro = Resources.Load<AudioClip>($"Audio/Exploring the Letter {character}");
+        var clipIntro = Resources.Load<AudioClip>($"Audio/{filename} {character}");
         var sprite = Resources.Load<Sprite>($"Sprites/{character}");
         var fbx = Resources.Load<GameObject>($"Models/{character}");
 
