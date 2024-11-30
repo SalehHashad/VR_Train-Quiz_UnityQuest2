@@ -9689,6 +9689,7 @@ MonoBehaviour:
   trainAgent: {fileID: 442351607}
   TrainStoppedEventSO: {fileID: 11400000, guid: 31b1e5175bb8e5348916f02dd13945ca, type: 2}
   PlayLetterIntroEventSO: {fileID: 11400000, guid: 65c7d038f95e8914295fcb4cd5134a1e, type: 2}
+  default_speed: 20
   isTrainStopped: 0
 --- !u!82 &442351606
 AudioSource:
@@ -46911,7 +46912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502036320061870164, guid: d8f15b82b5fdaed4189f3b02c0c4cb07, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

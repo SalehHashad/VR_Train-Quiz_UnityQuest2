@@ -9,7 +9,7 @@ public class TrainAgent : MonoBehaviour
     [SerializeField] private NavMeshAgent trainAgent;
     [SerializeField] private VoidEventChannelSO TrainStoppedEventSO;
     [SerializeField] private VoidEventChannelSO PlayLetterIntroEventSO;
-
+    [SerializeField] private float default_speed = 20f;
     private int currentDestinationIndex = 0;
     private int lastPointIndex;
     private Coroutine arrivalCoroutine;
@@ -36,6 +36,7 @@ public class TrainAgent : MonoBehaviour
 
     private void Start()
     {
+        trainAgent.speed = default_speed;
         SetNextDestination();
     }
 
@@ -43,6 +44,15 @@ public class TrainAgent : MonoBehaviour
     {
         if (arrivalCoroutine != null)
             StopCoroutine(arrivalCoroutine);
+
+        if (currentDestinationIndex == lastPointIndex)
+        {
+            trainAgent.speed = 3f;
+        }
+        else
+        {
+            trainAgent.speed = default_speed;
+        }
 
         trainAgent.SetDestination(desPoints[currentDestinationIndex].position);
         arrivalCoroutine = StartCoroutine(WaitForArrival());
@@ -61,7 +71,7 @@ public class TrainAgent : MonoBehaviour
         if (currentDestinationIndex == lastPointIndex)
         {
             TrainStoppedEventSO?.RaiseEvent();
-            isTrainStopped = true; // Mark train as stopped
+            isTrainStopped = true;
             Debug.Log("Train stopped at the last position.");
         }
         else
@@ -85,10 +95,10 @@ public class TrainAgent : MonoBehaviour
 
             if (currentDestinationIndex == lastPointIndex)
             {
-                currentDestinationIndex = 0; 
+                currentDestinationIndex = 0;
             }
 
-            SetNextDestination(); 
+            SetNextDestination();
             Debug.Log("Train resumed movement.");
         }
         else
