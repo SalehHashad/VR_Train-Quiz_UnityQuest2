@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,7 +14,7 @@ public class LearningManager : MonoBehaviour
     private int currentQuestionPanelIndex = 0;
 
     [SerializeField] private GameObject buttonPrefab;
-    
+
     [SerializeField] private Sprite blankSprite;
     private bool canPlayCharacterSound = false;
     private bool isNewLetterPhase = true;
@@ -25,8 +25,8 @@ public class LearningManager : MonoBehaviour
     private Animator animator;
     //const Param
     private const int NEW_LETTER_QUESTIONS = 3;
-    private const int INITIAL_REVIEW_QUESTIONS = 3;    
-    private const int MEDIUM_REVIEW_QUESTIONS = 4;     
+    private const int INITIAL_REVIEW_QUESTIONS = 3;
+    private const int MEDIUM_REVIEW_QUESTIONS = 4;
     private const int MAX_REVIEW_QUESTIONS = 5;
     private const int MAX_PAST_CHARACTERS = 5;
     private const int DEFAULT_OPTIONS = 3;
@@ -35,7 +35,7 @@ public class LearningManager : MonoBehaviour
     //Other Scripts
     private ICharacterDataProvider characterDataProvider;
     private List<LevelCharacter> pastCharacters = new List<LevelCharacter>();
-    [SerializeField] private LevelCharacter currentCharacter;
+    private LevelCharacter currentCharacter;
     //Integers 
     private int currentQuestionNumber = 0;
     private int reviewIndex = 0;
@@ -50,14 +50,42 @@ public class LearningManager : MonoBehaviour
     private Coroutine letterIntroCoroutine;
     private Coroutine audioLoopCoroutine;
 
+
+    //Events
+    [SerializeField] private VoidEventChannelSO TrainStoppedEventSO;
+    [SerializeField] private VoidEventChannelSO PlayLetterIntroEventSO;
     private void Awake()
     {
         questionPanels = new Transform[]
+        {
+            questionPanel,
+            questionPanel_1,
+            questionPanel_2
+        };
+    }
+
+    private void OnEnable()
     {
-        questionPanel,
-        questionPanel_1,
-        questionPanel_2
-    };
+        TrainStoppedEventSO.onEventRaised += TrainStopped;
+        PlayLetterIntroEventSO.onEventRaised += PlayLetterIntroClip;
+    }
+
+    private void OnDisable()
+    {
+        TrainStoppedEventSO.onEventRaised -= TrainStopped;
+        PlayLetterIntroEventSO.onEventRaised -= PlayLetterIntroClip;
+    }
+    public void TrainStopped()
+    {
+        Debug.LogError("Train IS Stopped");
+        //PlayCharacterSound(currentCharacter);
+        //SetupNewCharacter();
+    }
+
+    public void PlayLetterIntroClip()
+    {
+        Debug.LogError("Audio Is playing " + currentCharacter.LetterIntro);
+        AudioManager.Instance.PlayLetterIntro(currentCharacter.LetterIntro);
     }
 
     private void Start()
@@ -120,15 +148,8 @@ public class LearningManager : MonoBehaviour
 
     private IEnumerator StartNewCharacterSequence()
     {
-       
-        TrainAgent.Instance.MoveTheTrain();
-        // Train moving So we need to play Loop Audio
-        while (!TrainAgent.Instance.isTrainStopped)
-        {
-            AudioManager.Instance.PlayLetterIntro(currentCharacter.LetterIntro);
-            yield return new WaitForSeconds(currentCharacter.LetterIntro.length);
-        }
-
+        yield return null;
+        TrainAgent.Instance.ResumeTrainMovement();
         if (questionPanel != null)
         {
             questionPanel.gameObject.SetActive(true);
@@ -143,7 +164,6 @@ public class LearningManager : MonoBehaviour
 
     private void SpwanModel(GameObject charModel)
     {
-        // Clear previous character instances
         if (forwardCurrentCharacterInstance != null)
         {
             Destroy(forwardCurrentCharacterInstance);
@@ -155,7 +175,6 @@ public class LearningManager : MonoBehaviour
             centerCurrentCharacterInstance = null;
         }
 
-        // Spawn new characters if we have valid inputs
         if (charModel != null && characterSpawnPoint != null)
         {
             forwardCurrentCharacterInstance = Instantiate(charModel, characterSpawnPoint.position, characterSpawnPoint.rotation, characterSpawnPoint);
@@ -209,7 +228,7 @@ public class LearningManager : MonoBehaviour
         {
             GenerateReviewQuestion();
         }
-        
+
     }
     private int GetCurrentReviewQuestionCount()
     {
@@ -351,7 +370,7 @@ public class LearningManager : MonoBehaviour
             var button = child.GetComponent<AnswerButton>();
             if (button != null && button.isCorrect)
             {
-                button.Highlight(); 
+                button.Highlight();
             }
         }
     }
@@ -394,6 +413,7 @@ public class LearningManager : MonoBehaviour
             }
         }
         GenerateQuestion();
+        //PlayCharacterSound(currentCharacter);
     }
 
     private void ClearQuestionPanel()
@@ -447,5 +467,6 @@ public class LearningManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         GenerateQuestion();
+        //PlayCharacterSound(currentCharacter);
     }
 }

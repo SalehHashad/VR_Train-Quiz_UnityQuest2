@@ -1,26 +1,37 @@
-using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 
 public class TrainAgent : MonoBehaviour
 {
     public static TrainAgent Instance;
-    [SerializeField] Transform[] desPoints;
-    public NavMeshAgent trainAgent;
-    [SerializeField] AudioClip trainSound;
-    public event System.Action OnTrainStopped;
-    LearningManager learningManager;
-    public bool isFirstArrival = false;
-    public bool isTrainStopped = false;
-    public bool isAtLastPosition = false; 
+    [SerializeField] private Transform[] desPoints;
+    [SerializeField] private NavMeshAgent trainAgent;
+    [SerializeField] private VoidEventChannelSO TrainStoppedEventSO;
+    [SerializeField] private VoidEventChannelSO PlayLetterIntroEventSO;
+
     private int currentDestinationIndex = 0;
-    private int lastPointIndex; 
+    private int lastPointIndex;
+    private Coroutine arrivalCoroutine;
+    public bool isTrainStopped = false;
 
     private void Awake()
     {
-        learningManager = FindObjectOfType<LearningManager>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
-        lastPointIndex = desPoints.Length - 1; 
+
+        if (desPoints == null || desPoints.Length == 0 || trainAgent == null)
+        {
+            Debug.LogError("TrainAgent is not properly configured.");
+            enabled = false;
+            return;
+        }
+
+        lastPointIndex = desPoints.Length - 1;
     }
 
     private void Start()
@@ -30,8 +41,11 @@ public class TrainAgent : MonoBehaviour
 
     private void SetNextDestination()
     {
+        if (arrivalCoroutine != null)
+            StopCoroutine(arrivalCoroutine);
+
         trainAgent.SetDestination(desPoints[currentDestinationIndex].position);
-        StartCoroutine(WaitForArrival());
+        arrivalCoroutine = StartCoroutine(WaitForArrival());
     }
 
     private IEnumerator WaitForArrival()
@@ -41,49 +55,45 @@ public class TrainAgent : MonoBehaviour
             yield return null;
         }
 
-        isAtLastPosition = (currentDestinationIndex == lastPointIndex);
+        if (currentDestinationIndex == lastPointIndex - 1)
+            TriggerLetterIntro();
 
-        if (currentDestinationIndex == 0 && !isFirstArrival)
+        if (currentDestinationIndex == lastPointIndex)
         {
-            float trainSpeed = trainAgent.speed;
-            trainAgent.speed = 0;
-            yield return new WaitUntil(() => isFirstArrival);
-            trainAgent.speed = trainSpeed;
-            isFirstArrival = false;
-            isTrainStopped = true;
+            TrainStoppedEventSO?.RaiseEvent();
+            isTrainStopped = true; // Mark train as stopped
+            Debug.Log("Train stopped at the last position.");
         }
-
-        if (!isAtLastPosition)
+        else
         {
             currentDestinationIndex = (currentDestinationIndex + 1) % desPoints.Length;
             SetNextDestination();
         }
+    }
+
+    private void TriggerLetterIntro()
+    {
+        Debug.Log("Train is at the second-to-last position: " + currentDestinationIndex);
+        PlayLetterIntroEventSO?.RaiseEvent();
+    }
+
+    public void ResumeTrainMovement()
+    {
+        if (isTrainStopped)
+        {
+            isTrainStopped = false;
+
+            if (currentDestinationIndex == lastPointIndex)
+            {
+                currentDestinationIndex = 0; 
+            }
+
+            SetNextDestination(); 
+            Debug.Log("Train resumed movement.");
+        }
         else
         {
-            isTrainStopped = true;
-            OnTrainStopped?.Invoke();
-            AudioManager.Instance.StopingAudio();
-        }
-
-        isFirstArrival = false;
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    [ContextMenu("Move The Train")]
-    public void MoveTheTrain()
-    {
-        isFirstArrival = true;
-        isTrainStopped = false;
-        isAtLastPosition = false; 
-
-        if (currentDestinationIndex == lastPointIndex)
-        {
-            currentDestinationIndex = 0;
-            SetNextDestination();
+            Debug.LogWarning("Train is already moving!");
         }
     }
 }

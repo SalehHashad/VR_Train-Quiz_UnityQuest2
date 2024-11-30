@@ -45,7 +45,6 @@ public class TrainMover : MonoBehaviour
         {
             if (destinations.Count == 0)
             {
-                Debug.LogWarning("Destination list is empty. Train cannot move.");
                 yield break;
             }
 
@@ -55,8 +54,6 @@ public class TrainMover : MonoBehaviour
             {
                 yield return null;
             }
-
-            Debug.Log($"Train reached destination: {destinations[currentDestinationIndex].name}");
 
             audiosource.Play();
             yield return new WaitForSeconds(waitTimeAtStation);

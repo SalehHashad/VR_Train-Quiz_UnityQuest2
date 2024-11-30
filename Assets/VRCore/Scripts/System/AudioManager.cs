@@ -45,7 +45,7 @@ public class AudioManager : MonoBehaviour
     public void PlayLetterIntro(AudioClip clip)
     {
         audioSource.clip = clip;
-        audioSource.loop=true;
+        //audioSource.loop = true;
         audioSource.Play();
     }
     public void StopingAudio()
