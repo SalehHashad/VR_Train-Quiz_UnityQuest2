@@ -79,8 +79,7 @@ public class LearningManager : MonoBehaviour
     public void TrainStopped()
     {
         Debug.LogError("Train IS Stopped");
-        //PlayCharacterSound(currentCharacter);
-        //SetupNewCharacter();
+        
     }
 
     public void PlayLetterIntroClip()
@@ -166,7 +165,6 @@ public class LearningManager : MonoBehaviour
 
     private void AddClipToEntryState(Animator animator, AnimationClip clip)
     {
-        // Get the Animator Controller
         var animatorController = animator.runtimeAnimatorController as AnimatorController;
 
         if (animatorController == null)
@@ -174,19 +172,14 @@ public class LearningManager : MonoBehaviour
             Debug.LogError("Animator Controller is null or not of the correct type!");
             return;
         }
-
-        // Get the first layer (typically the base layer)
         var layer = animatorController.layers[0];
 
-        // Get the Entry State
         var stateMachine = layer.stateMachine;
         var entryState = stateMachine.entryPosition;
 
-        // Create a new state and set its motion to the animation clip
         var state = stateMachine.AddState("EntryAnimationState");
         state.motion = clip;
 
-        // Create a transition from Entry to the new state
         var transition = stateMachine.AddEntryTransition(state);
 
         Debug.Log("Clip added to Entry State successfully!");
@@ -194,7 +187,6 @@ public class LearningManager : MonoBehaviour
 
     private void ClearAnimator(Animator animator)
     {
-        // Get the Animator Controller
         var animatorController = animator.runtimeAnimatorController as AnimatorController;
 
         if (animatorController == null)
@@ -203,11 +195,11 @@ public class LearningManager : MonoBehaviour
             return;
         }
 
-        // Clear all states from the AnimatorController's state machine
+        
         foreach (var layer in animatorController.layers)
         {
             AnimatorStateMachine stateMachine = layer.stateMachine;
-            stateMachine.states = new ChildAnimatorState[0]; // Clear all states
+            stateMachine.states = new ChildAnimatorState[0]; 
         }
 
         Debug.Log("Cleared all animation clips from the Animator!");
