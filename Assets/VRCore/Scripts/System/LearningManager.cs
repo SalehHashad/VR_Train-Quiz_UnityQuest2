@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 using static QuestionGenerator;
@@ -165,45 +165,75 @@ public class LearningManager : MonoBehaviour
 
     private void AddClipToEntryState(Animator animator, AnimationClip clip)
     {
-        var animatorController = animator.runtimeAnimatorController as AnimatorController;
-
-        if (animatorController == null)
+        if (animator == null || clip == null)
         {
-            Debug.LogError("Animator Controller is null or not of the correct type!");
+            Debug.LogError("Animator or AnimationClip is null!");
             return;
         }
-        var layer = animatorController.layers[0];
 
-        var stateMachine = layer.stateMachine;
-        var entryState = stateMachine.entryPosition;
+        // Use Animator's parameters and transitions directly for runtime
+        animator.Play(clip.name); // Play the animation directly by name
 
-        var state = stateMachine.AddState("EntryAnimationState");
-        state.motion = clip;
-
-        var transition = stateMachine.AddEntryTransition(state);
-
-        Debug.Log("Clip added to Entry State successfully!");
+        Debug.Log("Clip added to Animator successfully!");
     }
 
+    // Method to clear animations from an Animator
     private void ClearAnimator(Animator animator)
     {
-        var animatorController = animator.runtimeAnimatorController as AnimatorController;
-
-        if (animatorController == null)
+        if (animator == null)
         {
-            Debug.LogError("Animator Controller is null or not of the correct type!");
+            Debug.LogError("Animator is null!");
             return;
         }
 
-        
-        foreach (var layer in animatorController.layers)
-        {
-            AnimatorStateMachine stateMachine = layer.stateMachine;
-            stateMachine.states = new ChildAnimatorState[0]; 
-        }
+        // Reset all triggers, states, or parameters that affect the animator
+        animator.SetTrigger("ResetTrigger"); // This assumes you have a trigger for reset
 
         Debug.Log("Cleared all animation clips from the Animator!");
     }
+
+
+    //private void AddClipToEntryState(Animator animator, AnimationClip clip)
+    //{
+    //    var animatorController = animator.runtimeAnimatorController as AnimatorController;
+
+    //    if (animatorController == null)
+    //    {
+    //        Debug.LogError("Animator Controller is null or not of the correct type!");
+    //        return;
+    //    }
+    //    var layer = animatorController.layers[0];
+
+    //    var stateMachine = layer.stateMachine;
+    //    var entryState = stateMachine.entryPosition;
+
+    //    var state = stateMachine.AddState("EntryAnimationState");
+    //    state.motion = clip;
+
+    //    var transition = stateMachine.AddEntryTransition(state);
+
+    //    Debug.Log("Clip added to Entry State successfully!");
+    //}
+
+    //private void ClearAnimator(Animator animator)
+    //{
+    //    var animatorController = animator.runtimeAnimatorController as AnimatorController;
+
+    //    if (animatorController == null)
+    //    {
+    //        Debug.LogError("Animator Controller is null or not of the correct type!");
+    //        return;
+    //    }
+
+
+    //    foreach (var layer in animatorController.layers)
+    //    {
+    //        AnimatorStateMachine stateMachine = layer.stateMachine;
+    //        stateMachine.states = new ChildAnimatorState[0]; 
+    //    }
+
+    //    Debug.Log("Cleared all animation clips from the Animator!");
+    //}
 
     private void SpwanModel(GameObject charModel)
     {
