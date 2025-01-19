@@ -55,6 +55,8 @@ public class LearningManager : MonoBehaviour
     //Events
     [SerializeField] private VoidEventChannelSO TrainStoppedEventSO;
     [SerializeField] private VoidEventChannelSO PlayLetterIntroEventSO;
+
+
     private void Awake()
     {
         questionPanels = new Transform[]
@@ -492,9 +494,12 @@ public class LearningManager : MonoBehaviour
 
     private void ClearQuestionPanel()
     {
-        foreach (Transform child in questionPanels[currentQuestionPanelIndex])
+        foreach (var panel in questionPanels)
         {
-            Destroy(child.gameObject);
+            foreach (Transform child in panel)
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 
@@ -509,18 +514,18 @@ public class LearningManager : MonoBehaviour
     private void CreateAnswerButtons(QuestionOption[] options)
     {
         int optionCount = options.Length;
-        int panelIndex = 0;
+        currentQuestionPanelIndex = 0;  // Set the current panel index
 
         if (optionCount == 4)
         {
-            panelIndex = 1;
+            currentQuestionPanelIndex = 1;
         }
         else if (optionCount == 5)
         {
-            panelIndex = 2;
+            currentQuestionPanelIndex = 2;
         }
 
-        Transform targetPanel = questionPanels[panelIndex];
+        Transform targetPanel = questionPanels[currentQuestionPanelIndex];
 
         foreach (var option in options)
         {
